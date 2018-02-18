@@ -1,0 +1,52 @@
+% egrep -v '^#' .ncmpcpp/config
+mpd_music_dir = "/home/samuel/Music/"
+mpd_host = "localhost"
+mpd_port = "6600"
+
+colors_enabled = "yes"
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "lain"
+visualizer_sync_interval = "30"
+visualizer_color = "red,magenta,yellow,white"
+#visualizer_look = "▊▊ ▋"
+visualizer_look = "∙■"
+visualizer_type = "ellipse" (spectrum/wave/ellipse)
+visualizer_in_stereo = "yes"
+
+statusbar_color = "red"
+#now_playing_suffix = "$3$/b ∙"
+main_window_color = "white"
+
+playlist_disable_highlight_delay = "2"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+
+autocenter_mode = "yes"
+centered_cursor = "yes"
+
+follow_now_playing_lyrics = "yes"
+locked_screen_width_part = "55"
+
+display_bitrate = "no"
+external_editor = "/usr/bin/vim"
+use_console_editor = "yes"
+
+header_visibility = "no"
+titles_visibility = "no"
+
+progressbar_color = "red"
+progressbar_elapsed_color = "red"
+#progressbar_look = "─┄"
+#progressbar_look = "┅┅┄"
+#progressbar_look = "─⊙┄"
+progressbar_look = "━━─"
+
+mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "1"
+#ask_before_clearing_main_playlist = "yes"
+enable_window_title = "no"
+
+song_columns_list_format = "(25)[red]{a} (40)[white]{t} (7f)[red]{l}"
+song_status_format = "{%a - }{%t}|{%f}"

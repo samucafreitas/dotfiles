@@ -1,0 +1,5 @@
+#!/bin/bash
+
+notify-send "Screenshot saved to \"~/screenshots$1\"."
+macopix --message-expire 6000 --message "XISSS ♥"
+scrot -d 2 %d-%m-%Y-%T.png -e 'mv $f ~/screenshots' $1

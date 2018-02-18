@@ -1,0 +1,182 @@
+# .__________                      _____
+# |__\_____  \  ____  ____   _____/ ____\
+# |  | _(__  <_/ ___\/  _ \ /    \   __\
+# |  |/       \  \__(  <_> )   |  \  |
+# |__/______  /\___  >____/|___|  /__|
+#          \/     \/           \/
+# File              : config
+# Author            : Sam Uel <samuelfreitas@linuxmail.org>
+# Date              : 07 jun 2016
+# Last Modified Date: 18 feb 2018
+# Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
+font pango: Fantasque Sans Mono
+set $ft Fantasque Sans Mono
+
+new_window pixel 2
+new_float pixel 2
+
+# Habilita o floating mode e move os containers
+for_window [title="^urxvt$"] floating enable resize set 730 435, move left 901px, move up 271px
+for_window [title="^ncmpcpp$"] floating enable resize set 860 430, move left 150px
+for_window [title="^htop$"] floating enable resize set 960 630, move left 150px, move up 100px
+for_window [title="^Telegram$"] resize set 700 1000
+for_window [title="^samuel - File Manager$"] floating enable resize set 1050 780
+for_window [workspace="4: chat"] floating enable
+for_window [workspace="5: archive"] floating enable
+assign [class="^Firefox$"] → 1: web
+assign [class="^Google-chrome$"] → 1: web
+assign [class="^TelegramDesktop$"] → 4: chat
+
+# cores
+set $back               #1d1F21
+set $black              #121212
+set $grey               #373B41
+set $lightgrey          #707880
+set $white              #C5C8C6
+set $yellow             #F0C674
+set $red                #DB3F62
+set $darkred            #A54242
+set $green              #EFEF15
+set $magenta            #AF87D7
+
+# class                 border      backgr.     text        split
+client.focused          $red        $red        $black      $darkred
+client.focused_inactive $grey       $grey       $lightgrey  $grey
+client.unfocused        $black      $black      $lightgrey  $grey
+client.urgent           $red        $red        $black      $darkred
+client.background       $back
+
+# mod key (Super = Win key)
+# mod1 = Alt (xmodmap to show)
+# mod4 = Winkey (xmodmap to show)
+set $mod Mod4
+
+# Terminal (mod+Enter)
+bindcode $mod+36 exec urxvt
+# Rofi (mod+alt+r)
+bindcode $mod+mod1+27 exec rofi -show run -width 9 -lines 5 -font 'lain 11'
+# GTK Theme sector (mod+winkey+a)
+bindcode $mod+mod1+38 exec lxappearance
+# Abre o dmenu (mod+alt+d)
+bindcode $mod+mod1+40 exec i3-dmenu-desktop --dmenu="dmenu -l 5 -fn 'Arial Unicode Ms-10' -nb '#121212' -sb '#db3f62' -sf '#000000' -p 'λ '"
+# Vai para o próximo ou anterior workspace ativo
+bindcode mod1+23 workspace next
+bindcode mod1+shift+23 workspace prev
+
+# player control
+bindsym XF86AudioStop exec python3 ~/.i3/lbar/mpdcontrol.py stopBtn
+bindsym XF86AudioPlay exec python3 ~/.i3/lbar/mpdcontrol.py playBtn
+bindsym XF86AudioPrev exec python3 ~/.i3/lbar/mpdcontrol.py prevBtn
+bindsym XF86AudioNext exec python3 ~/.i3/lbar/mpdcontrol.py nextBtn
+bindsym XF86AudioLowerVolume exec mpc volume -5
+bindsym XF86AudioRaiseVolume exec mpc volume +5
+
+# Bindsym's apps
+bindsym $mod+mod1+c exec google-chrome-stable
+bindsym $mod+mod1+f exec firefox
+bindsym $mod+mod1+v exec urxvt -e vim
+bindsym $mod+mod1+n exec urxvt -e ncmpcpp
+bindsym $mod+mod1+h exec urxvt -e htop
+bindsym $mod+mod1+g exec gimp
+bindsym $mod+mod1+p exec /opt/p5js/p5
+bindsym $mod+mod1+t exec /opt/Telegram/Telegram
+bindsym $mod+mod1+s exec /opt/sublime_text_3/sublime_text
+bindsym $mod+mod1+m exec masterpdfeditor4
+bindsym $mod+ctrl+g exec gvim
+bindsym $mod+ctrl+e exec emacs
+bindsym $mod+ctrl+n exec nautilus
+bindsym $mod+ctrl+m exec macopix --sockmsg
+bindsym $mod+ctrl+t exec thunar
+bindsym Print exec screenshot
+bindsym mod1+e exec dzenmenu
+
+# -----------------------------------------------------------------
+
+# MouseRight+$mod para alterar o tamanho dos containers
+floating_modifier $mod
+
+# Fecha o container corrente (mod+q)
+bindcode $mod+24 kill
+
+# mod+Setas para mover o foco entre os containers
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Shitf+mod+Setas para mover o container
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Divide os containers na horizontal (mod+h)
+bindcode mod1+43 split h
+
+# Divide os containers na vertical (mod+v)
+bindcode mod1+55 split v
+
+# Fullscreen mode para o container corrente (mod+f)
+bindcode $mod+41 fullscreen
+
+# Altera a disposição dos container (stacked (mod+s), tabbed (mod+t), default(mod+e), toggle split(mod+w))
+bindcode $mod+39 layout stacking
+bindcode $mod+28 layout tabbed
+bindcode $mod+40 layout default
+bindcode $mod+25 layout toggle split
+
+# Alterna entre tiling / floating (mod+shitf+space)
+bindcode $mod+Shift+65 floating toggle
+
+# Alterna o foco entre o tiling / floating (mod+space)
+bindsym $mod+space focus mode_toggle
+
+# Troca de workspace
+bindcode mod1+10 workspace 1: web
+bindcode mod1+11 workspace 2: code
+bindcode mod1+12 workspace 3: term
+bindcode mod1+13 workspace 4: chat
+bindcode mod1+14 workspace 5: archive
+bindcode mod1+15 workspace 6: bookmark
+
+# Move o container para o workspace "x"
+bindcode mod1+Shift+10 move container to workspace 1: web
+bindcode mod1+Shift+11 move container to workspace 2: code
+bindcode mod1+Shift+12 move container to workspace 3: term
+bindcode mod1+Shift+13 move container to workspace 4: chat
+bindcode mod1+Shift+14 move container to workspace 5: archive
+bindcode mod1+Shift+15 move container to workspace 6: bookmark
+
+# Recarrega o arquivo de configuração (mod+shitf+c)
+bindcode $mod+Shift+54 reload
+# Reinicializar o i3 (mod+shitf+r)
+bindcode $mod+Shift+27 restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Para alterar o tamanho dos containers (mod+r)
+bindsym $mod+r mode "resize"
+mode "resize" {
+  # Para as teclas h,j,k,l (floating)
+  bindsym h resize shrink left 1 px or 1 ppt
+  bindsym j resize grow down 1 px or 1 ppt
+  bindsym k resize shrink up 1 px or 1 ppt
+  bindsym l resize grow right 1 px or 1 ppt
+
+  # Para as setas (tile)
+  bindsym Left resize shrink width 1 px or 1 ppt
+  bindsym Down resize grow height 1 px or 1 ppt
+  bindsym Up resize shrink height 1 px or 1 ppt
+  bindsym Right resize grow width 1 px or 1 ppt
+
+  # Voltar ao normal: mod+d
+  bindsym $mod+d mode "default"
+}
+
+#------------------lemonbar-------------------
+bar {
+    i3bar_command  ~/.i3/lbar/loadbars.sh &
+}
+
+gaps inner 5
+gaps outer 5

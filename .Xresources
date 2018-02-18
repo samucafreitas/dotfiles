@@ -1,0 +1,58 @@
+! ____  ___
+! \   \/  /______   ____   __________  __ _________   ____  ____   ______
+!  \     /\_  __ \_/ __ \ /  ___/  _ \|  |  \_  __ \_/ ___\/ __ \ /  ___/
+!  /     \ |  | \/\  ___/ \___ (  <_> )  |  /|  | \/\  \__\  ___/ \___ \
+! /___/\  \|__|    \___  >____  >____/|____/ |__|    \___  >___  >____  >
+!       \_/            \/     \/                         \/    \/     \/
+! File              : .Xresources
+! Author            : Sam Uel <samuelfreitas@linuxmail.org>
+! Date              : 03 jan 2016
+! Last Modified Date: 18 feb 2018
+! Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
+
+!urxvt color scheme:
+URxvt*background: #121212
+URxvt*foreground: #ffffff
+
+URxvt.transparent: false
+URxvt.tintColor: white
+URxvt.shading: 100
+
+!urxvt fonts: 
+URxvt*font: xft: InconsolataForPowerline Nerd Font:style=Medium
+URxvt*boldFont: xft: InconsolataForPowerline Nerd Font:bold
+URxvt*skipBuiltinGlyphs: false
+
+URxvt*perl-ext-common: default,matcher
+URxvt.url-launcher: google-chrome-stable
+URxvt.matcher.button: 1 
+
+URxvt*scrollBar: false
+URxvt*cursorBlink: false
+URxvt*cursorUnderline: false
+URxvt*cursorColor: gray
+
+!black
+*color0:  #121212
+*color8:  #5e5e5e
+!red
+*color1:  #db3f62
+*color9:  #eb4509
+!green
+*color2:  #467056
+*color10: #4A844C
+!yellow
+*color3:  #FF7E4A
+*color11: #fff718
+!blue
+*color4:  #7991e5
+*color12: #83a598
+!magenta
+*color5:  #AF87D7
+*color13: #AF87D7
+!cyan
+*color6:  #689d6a
+*color14: #8ec07c
+!white
+*color7:  #cccccc
+*color15: #ffffff
