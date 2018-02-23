@@ -10,7 +10,7 @@ ln -s ~/dotfiles/.msf ~/
 ln -s ~/dotfiles/.dunstrc ~/
 ln -s ~/dotfiles/firefox/.vimperatorrc ~/
 ln -s ~/dotfiles/.xinitrc ~/
-ln -s ~/dotfiles/.bash_profile ~/
+ln -s ~/dotfiles/.profile ~/
 ln -s ~/dotfiles/.Xresources ~/
 ln -s ~/dotfiles/.zshrc ~/
 ln -s ~/dotfiles/.i3 ~/
