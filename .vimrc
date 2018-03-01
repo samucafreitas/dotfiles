@@ -7,7 +7,7 @@
 " File              : .vimrc
 " Author            : Sam Uel <samuelfreitas@linuxmail.org>
 " Date              : 09 feb 2016
-" Last Modified Date: 18 feb 2018
+" Last Modified Date: 28 feb 2018
 " Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
 execute pathogen#infect()
 
@@ -56,8 +56,8 @@ autocmd FileType python imap <F5> <ESC> :!python3 %
 autocmd FileType javascript map <F5> :!node %
 autocmd FileType javascript imap <F5> <ESC> :!node %
 
-autocmd FileType cpp map <F5> :!g++ % && ./a.out 
-autocmd FileType cpp imap <F5> <ESC> :!g++ % && ./a.out 
+autocmd FileType cpp map <F5> :!g++ % && ./a.out
+autocmd FileType cpp imap <F5> <ESC> :!g++ % && ./a.out
 
 autocmd FileType go map <F5> :!go run %
 autocmd FileType go imap <F5> <ESC> :!go run %
@@ -87,7 +87,7 @@ vnoremap n <Esc>
 nnoremap _ :sp <CR>
 nnoremap \| :vsp <CR>
 nnoremap <Left> :vertical resize -1 <CR>
-nnoremap <Right> :vertical resize +1 <CR> 
+nnoremap <Right> :vertical resize +1 <CR>
 nnoremap <Up> :resize +1 <CR>
 nnoremap <Down> :resize -1 <CR>
 nmap <F1> :%!xxd <CR>
@@ -149,7 +149,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 Plugin 'majutsushi/tagbar'
 
-call vundle#end() 
+call vundle#end()
 filetype plugin indent on
 
 if has("syntax")
@@ -169,3 +169,6 @@ endif
 let g:nerdtree_tabs_open_on_console_startup=0
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeWinPos = "right"
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
