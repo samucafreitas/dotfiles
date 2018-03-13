@@ -8,10 +8,10 @@
 # File              : dzenmenu
 # Author            : Sam Uel <samuelfreitas@linuxmail.org>
 # Date              : 02 nov 2016
-# Last Modified Date: 18 feb 2018
+# Last Modified Date: 13 mar 2018
 # Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
 
-eval $(xppu -mouseposition)
+eval $(xppu -mouseposition) # xppu -> https://github.com/samucafreitas/xppu
 
 font='FontAwesome-11'
 white='#ffffff'
