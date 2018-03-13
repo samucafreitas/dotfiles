@@ -265,7 +265,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers '(:enabled-for-modes prog-mode t)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -333,7 +333,7 @@ values."
  ;; If there is more than one, they won't work right.
  '(spacemacs-theme-custom-colors
    '((bg1 . "#121212")
-     (bg2 . "#1f1f1f")
+     (bg2 . "#121212")
      (comment-bg . "#1c1c1c")
      (comment . "#4a4a4a")
      (var . "#d5d5d5")
