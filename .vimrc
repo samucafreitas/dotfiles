@@ -39,6 +39,7 @@ set ignorecase
 set smartcase
 set cursorline
 set hlsearch
+set mouse=a
 
 let g:airline_theme='minimalist'
 let g:airline_powerline_fonts=1
