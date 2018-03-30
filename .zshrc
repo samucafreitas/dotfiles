@@ -19,3 +19,7 @@ alias audio-hdmi='pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stere
 alias audio-pc='pactl set-default-sink alsa_output.pci-0000_00_1b.0.analog-stereo'
 
 stty -ixon #Disable (XON/XOFF flow control)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
