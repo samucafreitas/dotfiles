@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env pypy3
 left_blocks = '' # wps
 right_blocks = '' # mpd, volume, date...
 

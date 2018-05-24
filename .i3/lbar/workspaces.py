@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-# 
+#!/usr/bin/env pypy3
+#
 # Uses i3ipc-python -> https://github.com/acrisci/i3ipc-python
 # Based on          -> https://github.com/acrisci/i3ipc-python/tree/master/examples
 #

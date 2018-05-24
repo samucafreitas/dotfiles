@@ -19,12 +19,12 @@ lbar_fifo="/tmp/lbar_fifo"
 mkfifo "${lbar_fifo}"
 
 # WPS -> lbar_fifo; BLOCKS -> lbar_fifo
-(python3 $(dirname $0)/workspaces.py > "${lbar_fifo}") &
-(python3 $(dirname $0)/lbar.py > "${lbar_fifo}") &
+(pypy3 $(dirname $0)/workspaces.py > "${lbar_fifo}") &
+(pypy3 $(dirname $0)/lbar.py > "${lbar_fifo}") &
 
 # Initialize bbar.sh (Bottom Bar)
 ($(dirname $0)/bbar.sh) &
 
-cat "${lbar_fifo}" | python3 $(dirname $0)/join.py | lemonbar -p -f "${font}" -f "${icon_font}" \
+cat "${lbar_fifo}" | pypy3 $(dirname $0)/join.py | lemonbar -p -f "${font}" -f "${icon_font}" \
     -u 2 -F "${fg_color}" -B "${bg_color}" -g "${geometry}" | sh &
 wait

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env pypy3
 from sys import argv
 from os import system, path
 from mpd import MPDClient

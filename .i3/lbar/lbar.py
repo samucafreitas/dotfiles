@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env pypy3
 #
 # Uses python-mpd2  -> https://github.com/Mic92/python-mpd2
 #
