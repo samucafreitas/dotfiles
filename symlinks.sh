@@ -22,3 +22,4 @@ ln -s ~/dotfiles/assets/screenshots/ ~/
 ln -s ~/dotfiles/assets/wallpapers/ ~/
 ln -s ~/dotfiles/bin ~/
 ln -s ~/dotfiles/.Xmodmap ~/
+ln -s ~/dotfiles/.emacs ~/
