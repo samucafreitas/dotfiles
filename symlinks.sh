@@ -23,3 +23,4 @@ ln -s ~/dotfiles/assets/wallpapers/ ~/
 ln -s ~/dotfiles/bin ~/
 ln -s ~/dotfiles/.Xmodmap ~/
 ln -s ~/dotfiles/.emacs ~/
+ln -s ~/dotfiles/.wakatime.cfg ~/
