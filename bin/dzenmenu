@@ -15,7 +15,7 @@ eval $(xppu -mouseposition) # xppu -> https://github.com/samucafreitas/xppu
 
 font='FontAwesome-11'
 white='#ffffff'
-red='#db3f62'
+magenta='#af87d7'
 black='#202020'
 
 (
@@ -46,6 +46,6 @@ black='#202020'
     echo "^ca(1, i3-msg exit) ^fg(${white})^fn($font)^fn()^fg() Exit ^ca()"
     echo "^ca(1, lock) ^fg(${white})^fn($font)^fn()^fg() Lock ^ca()"
 
-) | dzen2 -p -fn "FantasqueSansMono" -fg $red -bg $black \
+) | dzen2 -p -fn "FantasqueSansMono" -fg $magenta -bg $black \
     -x $X -y $Y -w 137 -l 25 -m v \
     -e 'onstart=uncollapse;button3=exit' &

@@ -7,7 +7,7 @@
 # File              : config
 # Author            : Sam Uel <samuelfreitas@linuxmail.org>
 # Date              : 07 jun 2016
-# Last Modified Date: 18 feb 2018
+# Last Modified Date: 10 jun 2018
 # Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
 font pango: Fantasque Sans Mono
 set $ft Fantasque Sans Mono
@@ -16,11 +16,11 @@ new_window pixel 2
 new_float pixel 2
 
 # Habilita o floating mode e move os containers
-for_window [title="^urxvt$"] floating enable resize set 730 435, move left 901px, move up 271px
+for_window [title="^urxvt$"] floating enable resize set 730 435, move left 586px, move up 261px
 for_window [title="^ncmpcpp$"] floating enable resize set 860 430, move left 150px
 for_window [title="^htop$"] floating enable resize set 960 630, move left 150px, move up 100px
 for_window [title="^Telegram$"] resize set 700 1000
-for_window [title="^samuel - File Manager$"] floating enable resize set 1050 780
+for_window [title="^samuel - File Manager$"] floating enable resize set 900 680
 for_window [workspace="4: chat"] floating enable
 for_window [workspace="5: archive"] floating enable
 assign [class="^Firefox$"] → 1: web
@@ -40,10 +40,10 @@ set $green              #EFEF15
 set $magenta            #AF87D7
 
 # class                 border      backgr.     text        split
-client.focused          $red        $red        $black      $darkred
+client.focused          $magenta    $magenta    $black      $darkred
 client.focused_inactive $grey       $grey       $lightgrey  $grey
 client.unfocused        $black      $black      $lightgrey  $grey
-client.urgent           $red        $red        $black      $darkred
+client.urgent           $magenta    $magenta    $black      $darkred
 client.background       $back
 
 # mod key (Super = Win key)
@@ -58,7 +58,7 @@ bindcode $mod+mod1+27 exec rofi -show run -width 9 -lines 5 -font 'lain 11'
 # GTK Theme sector (mod+winkey+a)
 bindcode $mod+mod1+38 exec lxappearance
 # Abre o dmenu (mod+alt+d)
-bindcode $mod+mod1+40 exec i3-dmenu-desktop --dmenu="dmenu -l 5 -fn 'Arial Unicode Ms-10' -nb '#121212' -sb '#db3f62' -sf '#000000' -p 'λ '"
+bindcode $mod+mod1+40 exec i3-dmenu-desktop --dmenu="dmenu -l 5 -fn 'Arial Unicode Ms-10' -nb '#121212' -sb '#AF87D7' -sf '#000000' -p 'λ '"
 # Vai para o próximo ou anterior workspace ativo
 bindcode mod1+23 workspace next
 bindcode mod1+shift+23 workspace prev

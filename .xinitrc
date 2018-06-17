@@ -32,11 +32,11 @@ xset r rate 200 50 &
 
 case $1 in
     xfce)
-            exec xfce4-session ;;
+            exec startxfce4 ;;
     xmonad)
             feh --bg-scale ~/wallpapers/purple/girlUmb.jpg;
             exec xmonad ;;
     *)
-            feh --bg-scale ~/wallpapers/red/minimalism-sunset.jpg;
+            feh --bg-scale ~/wallpapers/purple/girlUmb.jpg;
             exec i3 ;;
 esac

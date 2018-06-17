@@ -1,6 +1,6 @@
 #colors
 COLOR1 = '#1d2021' #black
-COLOR2 = '#db3f62' #red
+COLOR2 = '#af87d7' #magenta
 COLOR3 = '#b2aca2' #gray
 COLOR4 = '#ffffff' #white
 

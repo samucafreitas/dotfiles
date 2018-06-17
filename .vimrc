@@ -159,7 +159,7 @@ endif
 
 if &term =~ "xterm\\|rxvt"
   " use an purple cursor in insert mode
-  let &t_SI = "\<Esc>]12;#db3f62\x7"
+  let &t_SI = "\<Esc>]12;#af87d7\x7"
   " use a gray cursor otherwise
   let &t_EI = "\<Esc>]12;gray\x7"
   silent !echo -ne "\033]12;gray\007"

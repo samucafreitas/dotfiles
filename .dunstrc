@@ -32,7 +32,7 @@
 
 [frame]
     width = 2
-    color = "#DB3F62"
+    color = "#AF87D7"
 
 [shortcuts]
     #close = mod4+x
@@ -42,12 +42,12 @@
 
 [urgency_low]
     background = "#202020"
-    foreground = "#DB3F62"
+    foreground = "#AF87D7"
     timeout = 20
 
 [urgency_normal]
     background = "#202020"
-    foreground = "#DB3F62"
+    foreground = "#AF87D7"
     timeout = 20
 
 [urgency_critical]
@@ -60,4 +60,4 @@
     format  = "%s: %b"
     urgency = low
     background = "#202020"
-    foreground = "#DB3F62"
+    foreground = "#AF87D7"

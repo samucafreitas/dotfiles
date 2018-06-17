@@ -8,7 +8,7 @@
 # File              : bbar.sh
 # Author            : Sam Uel <samuelfreitas@linuxmail.org>
 # Date              : 07 dec 2016
-# Last Modified Date: 18 feb 2018
+# Last Modified Date: 10 jun 2018
 # Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
 
 if [ $(pgrep -cx $(basename $0)) -gt 1 ] ; then
@@ -18,25 +18,36 @@ fi
 
 #colors
 black="#000000"
-red="#db3f62"
+magenta="#af87d7"
 white="#ffffff"
 
 #icons
 monitor_icon=""
 user_icon=""
 gpu_icon=""
-net_icon=""
+wifi_icon=""
+ethernet_icon=""
 mem_icon=""
 disk_icon=""
 cpu_icon=""
+battery_icon=""
 
 curUser() {
-    echo "%{+u}%{U${red}}%{F${white}}$(whoami)%{F-} %{-u}%{B${red}}%{F${black}} ${user_icon} %{F-}%{B-}"
+    echo "%{+u}%{U${magenta}}%{F${white}}$(whoami)%{F-} %{-u}%{B${magenta}}%{F${black}} ${user_icon} %{F-}%{B-}"
 }
 
 net() {
-    iface="$(cat /sys/class/net/enp3s0/operstate)"
-    echo "%{F${white}} ${net_icon} ${iface} %{F-}"
+    iface="$(cat /sys/class/net/enp1s0/operstate)"
+    if [ "$iface" = "up" ]; then
+        echo "%{F${white}} ${ethernet_icon} ${iface} %{F-}"
+    else
+        SSID="$(/sbin/iw dev wlp2s0 link | grep SSID | cut -d " " -f 2-)"
+        if [ "$SSID" = ""]; then
+            echo "%{F${white}} ${wifi_icon} down %{F-}"
+        else
+            echo "%{F${white}} ${wifi_icon} ${SSID} %{F-}"
+        fi
+    fi
 }
 
 mem() {
@@ -51,12 +62,21 @@ cpu() {
     echo "%{F${white}} ${cpu_icon} $(sensors coretemp-isa-0000 | awk '/Package/ {print $4}') %{F-}"
 }
 
-gpu() {
-    echo "%{F${white}} ${gpu_icon} $(sensors radeon-pci-0100 | awk '/temp1/ {print $2}')%{F-}"
+pch() {
+    echo "%{F${white}} ${gpu_icon} $(sensors pch_skylake-virtual-0 | awk '/temp1/ {print $2}')%{F-}"
+}
+
+battery() {
+    r=$(acpi | awk '{print $3}' | sed 's/,//')
+    if [ "$r" = "Charging" ] || [ "$r" = "Full" ]; then
+        echo "%{F${white}}  ${battery_icon} $(acpi | awk '{print $4}' | sed 's/,//')++%{F-}"
+    else
+        echo "%{F${white}}  ${battery_icon} $(acpi | awk '{print $4}' | sed 's/,//')--%{F-}"
+    fi
 }
 
 while true; do
-    echo "%{l}%{B${red}}%{F${black}} ${monitor_icon} %{F-}%{B-}%{+u}%{U${red}}$(net)$(mem)$(disk)$(cpu)$(gpu)%{-u}%{r} $(curUser)"
+    echo "%{l}%{B${magenta}}%{F${black}} ${monitor_icon} %{F-}%{B-}%{+u}%{U${magenta}}$(net)$(mem)$(disk)$(cpu)$(pch)$(battery)%{-u}%{r} $(curUser)"
     sleep 10s
-done | lemonbar -p -b -u 2 -f "FantasqueSansMono-10" -f "FontAwesome-10" -g x20 &
+done | lemonbar -p -b -u 2 -f "FantasqueSansMono-11" -f "FontAwesome-11" -g x20 &
 wait

@@ -179,6 +179,12 @@ max02=1
 
 [BalloonColor]
 bg_p=0
+text_r=44975
+text_g=34695
+text_b=55255
+border_r=44975
+border_g=34695
+border_b=55255
 
 [Alpha]
 main=100
