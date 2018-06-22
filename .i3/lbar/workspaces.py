@@ -5,7 +5,7 @@
 #
 # File              : workspaces.py
 # Date              : 29 nov 2016
-# Last Modified Date: 30 jan 2018
+# Last Modified Date: 22 jun 2018
 # Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
 import os
 import sys
@@ -35,12 +35,14 @@ def format(workspaces, outputs):
                             fgColor=COLOR1,
                             wpIcon=WPS_ICONS[wps['num']-1])
         elif get_state(wps, output) == 'URG':
-            ws_l += ' %{{F{fgColor}}} {wpIcon} %{{F-}} '\
-                    .format(fgColor=COLOR2,
+            ws_l += '%{{B{bgColor}}} %{{F{fgColor}}} {wpIcon} %{{F-}} %{{B-}}'\
+                    .format(bgColor=COLOR1,
+                            fgColor=COLOR2,
                             wpIcon=WPS_ICONS[wps['num']-1])
         else:
-            ws_l += ' %{{F{fgColor}}} {wpIcon} %{{F-}} '\
-                    .format(fgColor=COLOR1,
+            ws_l += '%{{B{bgColor}}} %{{F{fgColor}}} {wpIcon} %{{F-}} %{{B-}}'\
+                    .format(bgColor=COLOR1,
+                            fgColor=COLOR3,
                             wpIcon=WPS_ICONS[wps['num']-1])
     return ws_l
 
