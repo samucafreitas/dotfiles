@@ -52,6 +52,7 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
+(global-wakatime-mode)
 (global-linum-mode t)
 (global-hl-line-mode t)
 (ido-mode t)
