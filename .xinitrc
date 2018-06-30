@@ -26,6 +26,7 @@ setxkbmap -option caps:escape
 dunst -conf ~/.dunstrc &
 macopix --sockmsg &
 thunar --daemon &
+xpad &
 xset r rate 200 50 &
 
 [[ -f ~/.Xresources ]] && xrdb -merge "${HOME}/.Xresources"
