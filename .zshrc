@@ -15,8 +15,10 @@ alias ipy='ipython'
 alias :q='exit'
 alias ls='els --els-icons=fontawesome --els-no-color'
 alias mw='cd ~/MWORLD/'
-alias audio-hdmi='pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo'
-alias audio-pc='pactl set-default-sink alsa_output.pci-0000_00_1b.0.analog-stereo'
+alias audio-hdmi='pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo'
+alias audio-pc='pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo'
+alias hdmi-output='xrandr --output eDP-1 --off && xrandr --output HDMI-1 --auto && i3 restart'
+alias nbk-output='xrandr --output HDMI-1 --off && xrandr --output eDP-1 --auto && i3 restart'
 
 stty -ixon #Disable (XON/XOFF flow control)
 
