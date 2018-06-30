@@ -20,7 +20,7 @@ fi
 
 source .profile
 numlockx &
-/usr/lib/xfce-polkit/xfce-polkit &
+lxpolkit &
 compton -CG --config ~/.comptonrc &
 setxkbmap -option caps:escape
 dunst -conf ~/.dunstrc &
