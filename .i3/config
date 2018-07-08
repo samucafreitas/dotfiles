@@ -7,7 +7,7 @@
 # File              : config
 # Author            : Sam Uel <samuelfreitas@linuxmail.org>
 # Date              : 07 jun 2016
-# Last Modified Date: 18 feb 2018
+# Last Modified Date: 02 jul 2018
 # Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
 font pango: Fantasque Sans Mono
 set $ft Fantasque Sans Mono
@@ -15,17 +15,27 @@ set $ft Fantasque Sans Mono
 new_window pixel 2
 new_float pixel 2
 
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id urxvt -e tmux
+exec --no-startup-id thunar
+exec --no-startup-id xpad
+exec --no-startup-id emacs
+
 # Habilita o floating mode e move os containers
-for_window [title="^urxvt$"] floating enable resize set 730 435, move left 901px, move up 271px
-for_window [title="^ncmpcpp$"] floating enable resize set 860 430, move left 150px
-for_window [title="^htop$"] floating enable resize set 960 630, move left 150px, move up 100px
+for_window [title="^urxvt$"] floating enable, resize set 730 435, move left 901px, move up 271px
+for_window [title="^ncmpcpp$"] floating enable, resize set 860 430, move left 150px
+for_window [title="^htop$"] floating enable, resize set 960 630, move left 150px, move up 100px
 for_window [title="^Telegram$"] resize set 700 1000
-for_window [title="^samuel - File Manager$"] floating enable resize set 1050 780
+for_window [class="^Thunar$"] floating enable, resize set 1050 780
+for_window [class="^xpad$"] floating enable, move container to workspace 6: bookmark, resize set  320 320
 for_window [workspace="4: chat"] floating enable
 for_window [workspace="5: archive"] floating enable
 assign [class="^Firefox$"] → 1: web
 assign [class="^Google-chrome$"] → 1: web
 assign [class="^TelegramDesktop$"] → 4: chat
+assign [class="^Emacs$"] → 2: code
+assign [title="^tmux$"] → 3: term
+assign [class="^Thunar$"] → 5: archive
 
 # cores
 set $back               #1d1F21
@@ -61,7 +71,7 @@ bindcode $mod+mod1+38 exec lxappearance
 bindcode $mod+mod1+40 exec i3-dmenu-desktop --dmenu="dmenu -l 5 -fn 'Arial Unicode Ms-10' -nb '#121212' -sb '#db3f62' -sf '#000000' -p 'λ '"
 # Vai para o próximo ou anterior workspace ativo
 bindcode mod1+23 workspace next
-bindcode mod1+shift+23 workspace prev
+bindcode mod1+66 workspace prev
 
 # player control
 bindsym XF86AudioStop exec python3 ~/.i3/lbar/mpdcontrol.py stopBtn
