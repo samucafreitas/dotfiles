@@ -18,19 +18,22 @@ URxvt.transparent: false
 URxvt.tintColor: white
 URxvt.shading: 100
 
-!urxvt fonts: 
+!urxvt fonts:
 URxvt*font: xft: InconsolataForPowerline Nerd Font:style=Medium
 URxvt*boldFont: xft: InconsolataForPowerline Nerd Font:bold
 URxvt*skipBuiltinGlyphs: false
 
 URxvt*perl-ext-common: default,matcher
 URxvt.url-launcher: google-chrome-stable
-URxvt.matcher.button: 1 
+URxvt.matcher.button: 1
 
 URxvt*scrollBar: false
 URxvt*cursorBlink: false
 URxvt*cursorUnderline: false
 URxvt*cursorColor: gray
+
+URxvt*keysym.C-minus: command:\033]50;xft:InconsolataForPowerline Nerd Font:pixelsize=16\007
+URxvt*keysym.C-equal: command:\033]50;xft:InconsolataForPowerline Nerd Font:pixelsize=20\007
 
 !black
 *color0:  #121212
