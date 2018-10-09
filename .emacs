@@ -1,7 +1,11 @@
 (package-initialize)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
+(require 'rainbow-mode)   
+(rainbow-mode t)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
@@ -35,6 +39,8 @@
 (setq indent-line-function 'insert-tab)
 (setq-default truncate-lines t)
 (setq-default global-visual-line-mode t)
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq vc-follow-symlinks t)
 
 (defalias 'list-buffers 'ibuffer)
 
