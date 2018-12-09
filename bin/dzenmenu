@@ -17,17 +17,20 @@ font='FontAwesome-11'
 white='#ffffff'
 red='#db3f62'
 black='#202020'
+elems=28
 
 (
     echo "^fg(${white})^fn($font)^fn() [-Apps-]^fg()"
     echo "━━━━━━━━━━━━━━━━━"
+    echo "^ca(1, XMind) ^fg(${white})^fn($font)^fn()^fg() XMind ^ca()"
     echo "^ca(1, gitkraken) ^fg(${white})^fn($font)^fn()^fg() GitKraken ^ca()"
     echo "^ca(1, gitahead) ^fg(${white})^fn($font)^fn()^fg() GitAhead ^ca()"
-    echo "^ca(1, urxvt -e tp) ^fg(${white})^fn($font)^fn()^fg() TomatoPower ^ca()"
+    echo "^ca(1, urxvt -e tp) ^fg(${white})^fn($font)^fn()^fg() TomatoPower ^ca()"
     echo "^ca(1, expo) ^fg(${white})^fn($font)^fn()^fg() Expo ^ca()"
     echo "^ca(1, genymotion) ^fg(${white})^fn($font)^fn()^fg() Genymotion ^ca()"
     echo "^ca(1, code) ^fg(${white})^fn($font)^fn()^fg() VS Code ^ca()"
     echo "^ca(1, urxvt) ^fg(${white})^fn($font)^fn()^fg() Urxvt ^ca()"
+    echo "^ca(1, pavucontrol) ^fg(${white})^fn($font)^fn()^fg() Pavucontrol ^ca()"
     echo "^ca(1, urxvt -e ncmpcpp) ^fg(${white})^fn($font)^fn()^fg() Ncmpcpp ^ca()"
     echo "^ca(1, vlc) ^fg(${white})^fn($font)^fn()^fg() Vlc ^ca()"
     echo "^ca(1, thunar) ^fg(${white})^fn($font)^fn()^fg() Thunar ^ca()"
@@ -48,5 +51,5 @@ black='#202020'
     echo "^ca(1, lock) ^fg(${white})^fn($font)^fn()^fg() Lock ^ca()"
 
 ) | dzen2 -p -fn "FantasqueSansMono" -fg $red -bg $black \
-    -x $X -y $Y -w 137 -l 25 -m v \
+    -x $X -y $Y -w 137 -l $elems -m v \
     -e 'onstart=uncollapse;button3=exit' &

@@ -848,7 +848,7 @@ startANSI()
     esc=""
 
     blackf="${esc}[38;5;232m"   grayf="${esc}[90m"
-    userNamef="${esc}[38;5m"  arrowf="${esc}[38;5;1m"
+    userNamef="${esc}[5m"  arrowf="${esc}[38;5;1m"
 
     greenb="${esc}[48;5;1m"
 
@@ -862,17 +862,17 @@ startANSI
 
 cat << EOF
 
- ╭◡◠✧${boldon}${userNamef}Sam Uel${reset}✧◠◡╮
- ${blackf}${greenb}■■■■${reset}${greenb}${blackf}■■${reset}${blackf}${greenb} OS ${reset}${arrowf}${reset} $distro $distro_release $distro_codename
- ${grayf}■■${reset}${grayf}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} Kernel ${reset}${reset}${arrowf}${reset} $(uname -r)
- ${grayf}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} Uptime ${reset}${reset}${arrowf}${reset} $uptime
- ${blackf}${greenb}■■■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} Packages ${reset}${reset}${arrowf}${reset} $pkgs
- ${grayf}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} Shell ${reset}${reset}${arrowf}${reset} $myShell
- ${grayf}■■${reset}${grayf}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} Res ${reset}${reset}${arrowf}${reset} $xResolution
- ${grayf}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} WM ${reset}${reset}${arrowf}${reset} $WM
- ${blackf}${greenb}■■■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} CPU ${reset}${reset}${arrowf}${reset} $cpu
- ${grayf}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} GPU ${reset}${reset}${arrowf}${reset} $gpu
- ${grayf}■■${reset}${grayf}■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} RAM ${reset}${reset}${arrowf}${reset} $mem
- ${blackf}${greenb}■■■■${reset}${blackf}${greenb}■■${reset}${blackf}${greenb} GitHub ${reset}${reset}${arrowf}${reset} https://github.com/samucafreitas
+ ╭◡◠✧${boldon}${userNamef} Sam Uel (λx.x)${reset}✧◠◡╮
+ ${blackf}${greenb}▣ ▣ ▣ ▣ ${reset}${greenb}${blackf}▣ ▣${reset}${blackf}${greenb}  OS ${reset}${arrowf}${reset} $distro $distro_release $distro_codename
+ ${grayf}▣ ▣${reset}${grayf} ▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb}  Kernel ${reset}${reset}${arrowf}${reset} $(uname -r)
+ ${grayf}▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  Uptime ${reset}${reset}${arrowf}${reset} $uptime
+ ${blackf}${greenb}▣ ▣ ▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  Packages ${reset}${reset}${arrowf}${reset} $pkgs
+ ${grayf}▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  Shell ${reset}${reset}${arrowf}${reset} $myShell
+ ${grayf}▣ ▣${reset}${grayf} ▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb}  Res ${reset}${reset}${arrowf}${reset} $xResolution
+ ${grayf}▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  WM ${reset}${reset}${arrowf}${reset} $WM
+ ${blackf}${greenb}▣ ▣ ▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  CPU ${reset}${reset}${arrowf}${reset} $cpu
+ ${grayf}▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  GPU ${reset}${reset}${arrowf}${reset} $gpu
+ ${grayf}▣ ▣${reset}${grayf} ▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb}  RAM ${reset}${reset}${arrowf}${reset} $mem
+ ${blackf}${greenb}▣ ▣ ▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  GitHub ${reset}${reset}${arrowf}${reset} https://github.com/samucafreitas
 
 EOF

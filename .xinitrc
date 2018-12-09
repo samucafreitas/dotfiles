@@ -24,6 +24,7 @@ numlockx &
 /usr/lib/xfce-polkit/xfce-polkit &
 compton -CG --config ~/.comptonrc &
 setxkbmap -option caps:escape
+setxkbmap -model abnt2 -layout br -variant abnt2
 dunst -conf ~/.dunstrc &
 macopix --sockmsg &
 thunar --daemon &

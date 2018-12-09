@@ -4,7 +4,7 @@
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode 1)
-(require 'rainbow-mode)   
+(require 'rainbow-mode)
 (rainbow-mode t)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)

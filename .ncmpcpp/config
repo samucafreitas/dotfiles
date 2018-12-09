@@ -9,7 +9,7 @@ visualizer_output_name = "lain"
 visualizer_sync_interval = "30"
 visualizer_color = "red,magenta,yellow,white"
 #visualizer_look = "▊▊ ▋"
-visualizer_look = "∙■"
+visualizer_look = "∙∎"
 visualizer_type = "ellipse" (spectrum/wave/ellipse)
 visualizer_in_stereo = "yes"
 

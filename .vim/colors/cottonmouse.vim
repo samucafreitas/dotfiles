@@ -61,7 +61,7 @@ if ( &t_Co >= 255 || $TERM =~? "256color" )
   hi Special        term=none cterm=bold ctermfg=140  ctermbg=none
   hi SpecialKey     term=none cterm=bold ctermfg=151  ctermbg=none
   hi Statement      term=none cterm=bold ctermfg=197  ctermbg=none
-  hi StatusLine     term=none cterm=bold ctermfg=234  ctermbg=240
+  hi StatusLine     term=none cterm=bold ctermfg=255  ctermbg=none
   hi StatusLineNC   term=none cterm=bold ctermfg=239  ctermbg=235
   hi StorageClass   term=none cterm=bold ctermfg=249  ctermbg=none
   hi String         term=none cterm=none ctermfg=204  ctermbg=none

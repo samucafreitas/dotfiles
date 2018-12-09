@@ -24,3 +24,6 @@ ln -s ~/dotfiles/bin ~/
 ln -s ~/dotfiles/.Xmodmap ~/
 ln -s ~/dotfiles/.emacs ~/
 ln -s ~/dotfiles/.wakatime.cfg ~/
+ln -s ~/dotfiles/.config/rofi/config ~/.config/rofi/config
+ln -s ~/dotfiles/.config/termite/config ~/.config/termite/config
+ln -s ~/dotfiles/.asoundrc ~/
