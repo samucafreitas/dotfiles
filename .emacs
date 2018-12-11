@@ -1,6 +1,9 @@
 (package-initialize)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -23,6 +26,7 @@
 (global-set-key (kbd "<s-right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "<s-down>") 'shrink-window)
 (global-set-key (kbd "<s-up>") 'enlarge-window)
+(global-set-key (kbd "C-x u") 'undo-only)
 
 (set-face-attribute 'default nil :font "Inconsolata For Powerline-13")
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
@@ -36,6 +40,7 @@
 (setq-default truncate-lines t)
 (setq-default global-visual-line-mode t)
 (setq make-backup-files nil) ; stop creating backup~ files
+(setq vc-follow-symlinks t)
 
 (defalias 'list-buffers 'ibuffer)
 
@@ -74,6 +79,7 @@
  '(linum-format " %5i ")
  '(package-selected-packages
    (quote
-    (spacemacs-theme rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##))))
+    (lsp-javascript-typescript lsp-typescript magit spacemacs-theme rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##))))
 
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
+(put 'upcase-region 'disabled nil)

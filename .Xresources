@@ -32,6 +32,9 @@ URxvt*cursorBlink: false
 URxvt*cursorUnderline: false
 URxvt*cursorColor: gray
 
+URxvt*keysym.C-minus: command:\033]50;xft:Inconsolata Nerd Font Mono:pixelsize=18\007
+URxvt*keysym.C-equal: command:\033]50;xft:Inconsolata Nerd Font Mono:pixelsize=23\007
+
 !black
 *color0:  #121212
 *color8:  #5e5e5e
