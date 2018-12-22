@@ -2,10 +2,17 @@
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'load-path "~/.emacs.d/evil")
+(require 'neotree)
 (require 'evil)
-(evil-mode 1)
 (require 'rainbow-mode)
+
+(evil-mode 0)
 (rainbow-mode t)
+
+
+(define-key neotree-mode-map (kbd "i") #'neotree-enter-horizontal-split)
+(define-key neotree-mode-map (kbd "I") #'neotree-enter-vertical-split)
+
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
@@ -78,6 +85,6 @@
  '(linum-format " %5i ")
  '(package-selected-packages
    (quote
-    (magit rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##))))
+    (evil-magit magit rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##))))
 
 (setq backup-directory-alist '(("." . "~/.emacs_saves")))
