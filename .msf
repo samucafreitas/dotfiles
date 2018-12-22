@@ -848,7 +848,7 @@ startANSI()
     esc=""
 
     blackf="${esc}[38;5;232m"   grayf="${esc}[90m"
-    userNamef="${esc}[38;5m"  arrowf="${esc}[35m"
+    userNamef="${esc}[5m"  arrowf="${esc}[35m"
 
     greenb="${esc}[45m"
 
