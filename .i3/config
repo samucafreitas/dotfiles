@@ -23,7 +23,7 @@ new_float pixel 2
 exec --no-startup-id xpad
 
 # Habilita o floating mode, resize e move os containers
-for_window [title="^urxvt$"] floating enable, resize set 730 435, move left 586px, move up 261px
+for_window [title="^termite$"] floating enable, resize set 730 435, move left 586px, move up 261px
 for_window [title="^ncmpcpp$"] floating enable, resize set 860 430, move left 150px
 for_window [title="^htop$"] floating enable, resize set 960 630, move left 150px, move up 100px
 for_window [title="^Telegram$"] resize set 700 1000
@@ -63,7 +63,7 @@ client.background       $back
 set $mod Mod4
 
 # Terminal (mod+Enter)
-bindcode $mod+36 exec urxvt
+bindcode $mod+36 exec termite
 # Rofi (mod+alt+r)
 bindcode $mod+mod1+27 exec rofi -show run -width 9 -lines 5 -font 'lain 11'
 # GTK Theme sector (mod+winkey+a)
