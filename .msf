@@ -13,7 +13,7 @@
 #
 # File              : .msf
 # Date              : 25 nov 2016
-# Last Modified Date: 16 jun 2018
+# Last Modified Date: 17 feb 2018
 # Last Modified By  : Sam Uel <samucaof42@gmail.com>
 
 
@@ -22,28 +22,28 @@ detectdistro () {
 	if [[ -z "${distro}" ]]; then
 		distro="Unknown"
 		# LSB Release Check
-	#	if type -p lsb_release >/dev/null 2>&1; then
-	#		# read distro_detect distro_release distro_codename <<< $(lsb_release -sirc)
-	#		distro_detect=( $(lsb_release -sirc) )
-	#		if [[ ${distro_detect[@]} -eq 3 ]]; then
-	#			distro_codename=${distro_detect[2]}
-	#			distro_release=${distro_detect[1]}
-	#			distro_detect=${distro_detect[0]}
-	#		else
-	#			for ((i=0; i<${distro_detect[@]}; i++)); do
-	#				if [[ ${distro_detect[$i]} =~ ^[[:digit:]]+((.[[:digit:]]+|[[:digit:]]+|)+)$ ]]; then
-	#					distro_release=${distro_detect[$i]}
-	#					distro_codename=${distro_detect[*]:$(($i+1)):${distro_detect[@]}+1}
-	#					distro_detect=${distro_detect[*]:0:${i}}
-	#					break 1
-	#				elif [[ ${distro_detect[$i]} =~ [Nn]/[Aa] || ${distro_detect[$i]} == "rolling" ]]; then
-	#					distro_release=${distro_detect[$i]}
-	#					distro_codename=${distro_detect[*]:$(($i+1)):${distro_detect[@]}+1}
-	#					distro_detect=${distro_detect[*]:0:${i}}
-	#					break 1
-	#				fi
-	#			done
-	#		fi
+		if type -p lsb_release >/dev/null 2>&1; then
+			# read distro_detect distro_release distro_codename <<< $(lsb_release -sirc)
+			distro_detect=( $(lsb_release -sirc) )
+			if [[ ${#distro_detect[@]} -eq 3 ]]; then
+				distro_codename=${distro_detect[2]}
+				distro_release=${distro_detect[1]}
+				distro_detect=${distro_detect[0]}
+			else
+				for ((i=0; i<${#distro_detect[@]}; i++)); do
+					if [[ ${distro_detect[$i]} =~ ^[[:digit:]]+((.[[:digit:]]+|[[:digit:]]+|)+)$ ]]; then
+						distro_release=${distro_detect[$i]}
+						distro_codename=${distro_detect[@]:$(($i+1)):${#distro_detect[@]}+1}
+						distro_detect=${distro_detect[@]:0:${i}}
+						break 1
+					elif [[ ${distro_detect[$i]} =~ [Nn]/[Aa] || ${distro_detect[$i]} == "rolling" ]]; then
+						distro_release=${distro_detect[$i]}
+						distro_codename=${distro_detect[@]:$(($i+1)):${#distro_detect[@]}+1}
+						distro_detect=${distro_detect[@]:0:${i}}
+						break 1
+					fi
+				done
+			fi
 
 			if [[ "${distro_detect}" == "archlinux" || "${distro_detect}" == "Arch Linux" || "${distro_detect}" == "arch" || "${distro_detect}" == "Arch" || "${distro_detect}" == "archarm" ]]; then
 				distro="Arch Linux"
@@ -310,8 +310,11 @@ detectdistro () {
 					fi
 				fi
 			fi
-		fi
 
+
+
+		fi
+	fi
 	if [[ ${BASH_VERSINFO[0]} -ge 4 ]]; then
 		if [[ ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -gt 1 ]] || [[ ${BASH_VERSINFO[0]} -gt 4 ]]; then
 			distro=${distro,,}
@@ -847,7 +850,7 @@ startANSI()
     blackf="${esc}[38;5;232m"   grayf="${esc}[90m"
     userNamef="${esc}[38;5m"  arrowf="${esc}[35m"
 
-    arrowbodyb="${esc}[45m"
+    greenb="${esc}[45m"
 
 
     boldon="${esc}[1m"
@@ -859,17 +862,17 @@ startANSI
 
 cat << EOF
 
- ╭◡◠✧${boldon}${userNamef}Sam Uel${reset}✧◠◡╮
- ${blackf}${arrowbodyb}■■■■${reset}${arrowbodyb}${blackf}■■${reset}${blackf}${arrowbodyb} OS ${reset}${arrowf}${reset} $distro $distro_release $distro_codename
- ${grayf}■■${reset}${grayf}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} Kernel ${reset}${reset}${arrowf}${reset} $(uname -r)
- ${grayf}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} Uptime ${reset}${reset}${arrowf}${reset} $uptime
- ${blackf}${arrowbodyb}■■■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} Packages ${reset}${reset}${arrowf}${reset} $pkgs
- ${grayf}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} Shell ${reset}${reset}${arrowf}${reset} $myShell
- ${grayf}■■${reset}${grayf}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} Res ${reset}${reset}${arrowf}${reset} $xResolution
- ${grayf}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} WM ${reset}${reset}${arrowf}${reset} $WM
- ${blackf}${arrowbodyb}■■■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} CPU ${reset}${reset}${arrowf}${reset} $cpu
- ${grayf}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} GPU ${reset}${reset}${arrowf}${reset} $gpu
- ${grayf}■■${reset}${grayf}■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} RAM ${reset}${reset}${arrowf}${reset} $mem
- ${blackf}${arrowbodyb}■■■■${reset}${blackf}${arrowbodyb}■■${reset}${blackf}${arrowbodyb} GitHub ${reset}${reset}${arrowf}${reset} https://github.com/samucafreitas
+ ╭◡◠✧${boldon}${userNamef} Sam Uel (λx.x)${reset}✧◠◡╮
+ ${blackf}${greenb}▣ ▣ ▣ ▣ ${reset}${greenb}${blackf}▣ ▣${reset}${blackf}${greenb}  OS ${reset}${arrowf}${reset} $distro $distro_release $distro_codename
+ ${grayf}▣ ▣${reset}${grayf} ▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb}  Kernel ${reset}${reset}${arrowf}${reset} $(uname -r)
+ ${grayf}▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  Uptime ${reset}${reset}${arrowf}${reset} $uptime
+ ${blackf}${greenb}▣ ▣ ▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  Packages ${reset}${reset}${arrowf}${reset} $pkgs
+ ${grayf}▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  Shell ${reset}${reset}${arrowf}${reset} $myShell
+ ${grayf}▣ ▣${reset}${grayf} ▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb}  Res ${reset}${reset}${arrowf}${reset} $xResolution
+ ${grayf}▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  WM ${reset}${reset}${arrowf}${reset} $WM
+ ${blackf}${greenb}▣ ▣ ▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  CPU ${reset}${reset}${arrowf}${reset} $cpu
+ ${grayf}▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  GPU ${reset}${reset}${arrowf}${reset} $gpu
+ ${grayf}▣ ▣${reset}${grayf} ▣ ▣ ${reset}${blackf}${greenb}▣ ▣${reset}${blackf}${greenb}  RAM ${reset}${reset}${arrowf}${reset} $mem
+ ${blackf}${greenb}▣ ▣ ▣ ▣${reset}${blackf}${greenb} ▣ ▣${reset}${blackf}${greenb}  GitHub ${reset}${reset}${arrowf}${reset} https://github.com/samucafreitas
 
 EOF
