@@ -64,8 +64,8 @@ set $mod Mod4
 
 # Terminal (mod+Enter)
 bindcode $mod+36 exec termite
-# Rofi (mod+alt+r)
-bindcode $mod+mod1+27 exec rofi -show run -width 9 -lines 5 -font 'lain 11'
+# Rofi (alt+r)
+bindcode mod1+27 exec rofi -show run -width 9 -lines 5 -font 'lain 11'
 # GTK Theme sector (mod+winkey+a)
 bindcode $mod+mod1+38 exec lxappearance
 # Abre o dmenu (mod+alt+d)
