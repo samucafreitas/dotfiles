@@ -38,6 +38,6 @@ case $1 in
             feh --bg-scale ~/wallpapers/purple/girlUmb.jpg;
             exec xmonad ;;
     *)
-            feh --bg-scale ~/wallpapers/purple/wallhaven.jpg;
+            feh --bg-scale ~/wallpapers/purple/saint_ignucius.png;
             exec i3 ;;
 esac
