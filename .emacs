@@ -130,10 +130,10 @@
 "
 ^Movement^        ^Split^         ^Switch^       ^Resize^      ^Win. move^
 -------------------------------------------------------------------------
-_h_ ←           _I_ vertical      _b_uffer      _+_ maximize     _H_ X←
+_h_ ←          _I_ vertical      _b_uffer      _+_ maximize     _H_ X←
 _j_ ↓           _i_ horizontal    _f_ind files  _-_ minimize     _J_ X↓
 _k_ ↑           _z_ undo          _a_ce 1                      _K_ X↑
-_l_ →           _Z_ reset         _s_wap                       _L_ X→
+_l_ →          _Z_ reset         _s_wap                       _L_ X→
 _F_ollow        _D_lt Other       _S_ave
 _SPC_ cancel    _o_nly this       _d_elete
 "
