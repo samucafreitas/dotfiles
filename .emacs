@@ -3,27 +3,47 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'neotree)
+(require 'airline-themes)
+(require 'hydra-examples)
+
+(setq evil-want-integration t)
+(setq evil-want-keybinding nil)
 (require 'evil)
-(require 'rainbow-mode)
+(when (require 'evil-collection nil t)
+  (evil-collection-init 'neotree))
 
-(evil-mode 0)
-(rainbow-mode t)
+(eval-after-load 'hlinum
+  '(progn
+     (set-face-attribute 'linum-highlight-face nil
+                         :background "#000000"
+                         :foreground "#DB3F62")))
+(evil-mode t)
+(global-undo-tree-mode -1)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
+(global-wakatime-mode)
+(global-linum-mode t)
+(global-hl-line-mode t)
+(ido-mode t)
+(show-paren-mode t)
+(hlinum-activate)
 
+(avy-setup-default)
 
 (define-key neotree-mode-map (kbd "i") #'neotree-enter-horizontal-split)
 (define-key neotree-mode-map (kbd "I") #'neotree-enter-vertical-split)
+(define-key evil-insert-state-map (kbd "M-j M-k") 'evil-normal-state)
+(define-key evil-visual-state-map (kbd "C-c") 'kill-ring-save)
+(define-key evil-insert-state-map (kbd "C-v") 'clipboard-yank)
 
+(global-set-key (kbd "C-c C-c i") 'split-window-below)
+(global-set-key (kbd "C-c C-c I") 'split-window-right)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (global-set-key [f8] 'neotree-toggle)
 (global-set-key (kbd "s-x p") 'projectile-mode)
-
-(global-set-key (kbd "M-s k") 'windmove-up)
-(global-set-key (kbd "M-s j") 'windmove-down)
-(global-set-key (kbd "M-s h") 'windmove-left)
-(global-set-key (kbd "M-s l") 'windmove-right)
-(avy-setup-default)
 (global-set-key (kbd "C-:") 'avy-goto-char)
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
@@ -34,8 +54,8 @@
 (global-set-key (kbd "<s-right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "<s-down>") 'shrink-window)
 (global-set-key (kbd "<s-up>") 'enlarge-window)
+(global-set-key (kbd "C-x u") 'undo-only)
 
-(set-face-attribute 'default nil :font "Inconsolata For Powerline-13")
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (setq neo-window-fixed-size nil)
 (setq neo-window-position 'right)
@@ -46,7 +66,8 @@
 (setq indent-line-function 'insert-tab)
 (setq-default truncate-lines t)
 (setq-default global-visual-line-mode t)
-(setq make-backup-files nil) ; stop creating backup~ files
+;; (setq make-backup-files nil) ; stop creating backup~ files
+(setq backup-directory-alist '(("." . "~/.emacs_saves")))
 (setq vc-follow-symlinks t)
 
 (defalias 'list-buffers 'ibuffer)
@@ -56,18 +77,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "gold" :foreground "#151718"))))
- '(mode-line ((t (:background "black" :foreground "#DB3F62"))))
+ '(cursor ((t (:background "#DB3F62" :foreground "#000000"))))
+ '(hl-line ((t (:background "#202020"))))
+ '(mode-line ((t (:background "#101010" :foreground "#DB3F62"))))
  '(neo-dir-link-face ((t (:foreground "#DB3F62" :slant normal :weight medium :height 120 :family "InconsolataForPowerline Nerd Font"))))
  '(neo-file-link-face ((t (:foreground "White" :weight medium :height 120 :family "InconsolataForPowerline Nerd Font")))))
-
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
-(global-linum-mode t)
-(global-hl-line-mode t)
-(ido-mode t)
-(show-paren-mode t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -81,10 +95,73 @@
  '(custom-enabled-themes (quote (junio)))
  '(custom-safe-themes
    (quote
-    ("6ac7c0f959f0d7853915012e78ff70150bfbe2a69a1b703c3ac4184f9ae3ae02" "7366916327c60fdf17b53b4ac7f565866c38e1b4a27345fe7facbf16b7a4e9e8" "3fa81193ab414a4d54cde427c2662337c2cab5dd4eb17ffff0d90bca97581eb6" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "987b709680284a5858d5fe7e4e428463a20dfabe0a6f2a6146b3b8c7c529f08b" "3cc2385c39257fed66238921602d8104d8fd6266ad88a006d0a4325336f5ee02" "58c6711a3b568437bab07a30385d34aacf64156cc5137ea20e799984f4227265" "3d5ef3d7ed58c9ad321f05360ad8a6b24585b9c49abcee67bdcbb0fe583a6950" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" default)))
+    ("8d5f22f7dfd3b2e4fc2f2da46ee71065a9474d0ac726b98f647bc3c7e39f2819" "6ac7c0f959f0d7853915012e78ff70150bfbe2a69a1b703c3ac4184f9ae3ae02" "7366916327c60fdf17b53b4ac7f565866c38e1b4a27345fe7facbf16b7a4e9e8" "3fa81193ab414a4d54cde427c2662337c2cab5dd4eb17ffff0d90bca97581eb6" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "987b709680284a5858d5fe7e4e428463a20dfabe0a6f2a6146b3b8c7c529f08b" "3cc2385c39257fed66238921602d8104d8fd6266ad88a006d0a4325336f5ee02" "58c6711a3b568437bab07a30385d34aacf64156cc5137ea20e799984f4227265" "3d5ef3d7ed58c9ad321f05360ad8a6b24585b9c49abcee67bdcbb0fe583a6950" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" default)))
  '(linum-format " %5i ")
  '(package-selected-packages
    (quote
-    (evil-magit magit rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##))))
+    (evil-collection evil-magit magit rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##)))
+ '(wakatime-cli-path "/usr/bin/wakatime")
+ '(wakatime-python-bin nil))
 
-(setq backup-directory-alist '(("." . "~/.emacs_saves")))
+(put 'upcase-region 'disabled nil)
+
+(global-set-key (kbd "M-s") (defhydra hydra-window ()
+"
+^Movement^        ^Split^         ^Switch^       ^Resize^      ^Win. move^
+-------------------------------------------------------------------------
+_h_ ←          _I_ vertical      _b_uffer      _+_ maximize     _H_ X←
+_j_ ↓          _i_ horizontal    _f_ind files  _-_ minimize     _J_ X↓
+_k_ ↑          _z_ undo          _a_ce 1                      _K_ X↑
+_l_ →          _Z_ reset         _s_wap                       _L_ X→
+_F_ollow       _D_lt Other       _S_ave
+_SPC_ cancel   _o_nly this       _d_elete
+"
+   ("h" windmove-left)
+   ("j" windmove-down)
+   ("k" windmove-up)
+   ("l" windmove-right)
+   ("H" evil-window-move-far-left)
+   ("J" evil-window-move-very-bottom)
+   ("K" evil-window-move-very-top)
+   ("L" evil-window-move-far-right)
+   ("b" helm-mini)
+   ("f" helm-find-files)
+   ("F" follow-mode)
+   ("a" (lambda ()
+          (interactive)
+          (ace-window 1)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body))
+       )
+   ("I" (lambda ()
+          (interactive)
+          (split-window-right)
+          (windmove-right))
+       )
+   ("i" (lambda ()
+          (interactive)
+          (split-window-below)
+          (windmove-down))
+        )
+   ("s" (lambda ()
+          (interactive)
+          (ace-window 4)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body)))
+   ("S" save-buffer)
+   ("d" delete-window)
+   ("D" (lambda ()
+          (interactive)
+          (ace-window 16)
+          (add-hook 'ace-window-end-once-hook
+                    'hydra-window/body))
+       )
+   ("o" delete-other-windows)
+   ("+" maximize-window)
+   ("-" minimize-window)
+   ("z" (progn
+          (winner-undo)
+          (setq this-command 'winner-undo))
+   )
+   ("Z" winner-redo)
+   ("SPC" nil)))
