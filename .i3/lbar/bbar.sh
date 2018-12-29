@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ___.  __________
 # \_ |__\______   \_____ _______
 #  | __ \|    |  _/\__  \\_  __ \
@@ -8,7 +8,7 @@
 # File              : bbar.sh
 # Author            : Sam Uel <samuelfreitas@linuxmail.org>
 # Date              : 07 dec 2016
-# Last Modified Date: 10 jun 2018
+# Last Modified Date: 25 dec 2019
 # Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
 
 if [ $(pgrep -cx $(basename $0)) -gt 1 ] ; then
@@ -42,7 +42,8 @@ net() {
         echo "%{F${white}} ${ethernet_icon} ${iface} %{F-}"
     else
         SSID="$(/sbin/iw dev wlp2s0 link | grep SSID | cut -d " " -f 2-)"
-        if [ "$SSID" = ""]; then
+
+        if [ -z "$SSID" ]; then
             echo "%{F${white}} ${wifi_icon} down %{F-}"
         else
             echo "%{F${white}} ${wifi_icon} ${SSID} %{F-}"
@@ -67,11 +68,18 @@ pch() {
 }
 
 battery() {
-    r=$(acpi | awk '{print $3}' | sed 's/,//')
-    if [ "$r" = "Charging" ] || [ "$r" = "Full" ]; then
-        echo "%{F${white}}  ${battery_icon} $(acpi | awk '{print $4}' | sed 's/,//')++%{F-}"
+    charging=$(acpi | awk '{print $3}' | sed 's/,//')
+    declare -i percent=$(acpi | awk '{print $4}' | sed 's/%,//')
+
+    if [ "$percent" -le 15 ]; then
+       $(notify-send "Notebook is dying!!!")
+       $(macopix --message-expire 6000 --message "Please, charge your notebook!!!")
+    fi
+
+    if [ "$charging" = "Charging" ] || [ "$charging" = "Full" ]; then
+        echo "%{F${white}}  ${battery_icon} ${percent}%++%{F-}"
     else
-        echo "%{F${white}}  ${battery_icon} $(acpi | awk '{print $4}' | sed 's/,//')--%{F-}"
+        echo "%{F${white}}  ${battery_icon} ${percent}%--%{F-}"
     fi
 }
 
