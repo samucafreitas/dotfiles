@@ -11,7 +11,7 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name="cottonmouse"
+let g:colors_name="redmilky"
 
 if ( &t_Co >= 255 || $TERM =~? "256color" )
   hi Normal         term=none cterm=none ctermfg=255  ctermbg=233

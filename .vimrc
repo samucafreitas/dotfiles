@@ -44,7 +44,7 @@ set mouse=a
 let g:airline_theme='minimalist'
 let g:airline_powerline_fonts=1
 "let g:gruvbox_contrast_dark='neutral'
-colorscheme cottonmouse
+colorscheme redmilky
 
 "FileType
 autocmd FileType haskell map <F5> :!ghci %

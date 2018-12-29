@@ -3,7 +3,7 @@
 # Symbolic links
 ln -s ~/dotfiles/.vimrc ~/
 ln -s ~/dotfiles/.spacemacs ~/
-ln -s ~/dotfiles/.vim/colors/cottonmouse.vim ~/.vim/colors/cottonmouse.vim
+ln -s ~/dotfiles/.vim/colors/redmilky.vim ~/.vim/colors/redmilky.vim
 ln -s ~/dotfiles/.comptonrc ~/
 ln -s ~/dotfiles/.tmux.conf ~/
 ln -s ~/dotfiles/.msf ~/
