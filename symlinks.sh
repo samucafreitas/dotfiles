@@ -1,26 +1,28 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+source $HOME/dotfiles/util.sh
 
 # Symbolic links
-ln -s ~/dotfiles/.vimrc ~/
-ln -s ~/dotfiles/.spacemacs ~/
-ln -s ~/dotfiles/.vim/colors/purplemilky.vim ~/.vim/colors/purplemilky.vim
-ln -s ~/dotfiles/.comptonrc ~/
-ln -s ~/dotfiles/.tmux.conf ~/
-ln -s ~/dotfiles/.msf ~/
-ln -s ~/dotfiles/.dunstrc ~/
-ln -s ~/dotfiles/firefox/.vimperatorrc ~/
-ln -s ~/dotfiles/.xinitrc ~/
-ln -s ~/dotfiles/.profile ~/
-ln -s ~/dotfiles/.Xresources ~/
-ln -s ~/dotfiles/.zshrc ~/
-ln -s ~/dotfiles/.i3 ~/
-ln -s ~/dotfiles/.mpd/mpd.conf ~/.mpd/mpd.conf
-ln -s ~/dotfiles/.ncmpcpp ~/
-ln -s ~/dotfiles/.macopix ~/
-ln -s ~/dotfiles/.weechat/weechat.conf ~/.weechat/weechat.conf
-ln -s ~/dotfiles/assets/screenshots/ ~/
-ln -s ~/dotfiles/assets/wallpapers/ ~/
-ln -s ~/dotfiles/bin ~/
-ln -s ~/dotfiles/.Xmodmap ~/
-ln -s ~/dotfiles/.emacs ~/
-ln -s ~/dotfiles/.config/rofi/config ~/.config/rofi/config
+ln -s $DOTFILES/.vimrc $HOME/
+ln -s $DOTFILES/.spacemacs $HOME/
+ln -s $DOTFILES/.vim/colors/purplemilky.vim $HOME/.vim/colors/purplemilky.vim
+ln -s $DOTFILES/.comptonrc $HOME/
+ln -s $DOTFILES/.tmux.conf $HOME/
+ln -s $DOTFILES/.msf $HOME/
+ln -s $DOTFILES/.dunstrc $HOME/
+ln -s $DOTFILES/firefox/.vimperatorrc $HOME/
+ln -s $DOTFILES/.xinitrc $HOME/
+ln -s $DOTFILES/.profile $HOME/
+ln -s $DOTFILES/.Xresources $HOME/
+ln -s $DOTFILES/.zshrc $HOME/
+ln -s $DOTFILES/.i3 $HOME/
+ln -s $DOTFILES/.mpd/mpd.conf $HOME/.mpd/mpd.conf
+ln -s $DOTFILES/.ncmpcpp $HOME/
+ln -s $DOTFILES/.macopix $HOME/
+ln -s $DOTFILES/.weechat/weechat.conf $HOME/.weechat/weechat.conf
+ln -s $DOTFILES/assets/screenshots/ $HOME/
+ln -s $DOTFILES/assets/wallpapers/ $HOME/
+ln -s $DOTFILES/bin $HOME/
+ln -s $DOTFILES/.Xmodmap $HOME/
+ln -s $DOTFILES/.emacs $HOME/
+ln -s $DOTFILES/.config/rofi/config $HOME/.config/rofi/config
