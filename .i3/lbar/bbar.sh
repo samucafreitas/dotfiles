@@ -69,7 +69,7 @@ pch() {
 
 battery() {
     charging=$(acpi | awk '{print $3}' | sed 's/,//')
-    declare -i percent=$(acpi | awk '{print $4}' | sed 's/%,//')
+    declare -i percent=$(acpi | awk '{print $4}' | sed -e 's/%//' -e 's/,//')
 
     if [ "$percent" -le 15 ]; then
        $(notify-send "Notebook is dying!!!")
