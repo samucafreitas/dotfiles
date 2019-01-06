@@ -109,21 +109,37 @@
 "
 ^Movement^        ^Split^         ^Switch^       ^Resize^      ^Win. move^
 -------------------------------------------------------------------------
-_h_ ←          _I_ vertical      _b_uffer      _+_ maximize     _H_ X←
-_j_ ↓          _i_ horizontal    _f_ind files  _-_ minimize     _J_ X↓
-_k_ ↑          _z_ undo          _a_ce 1                      _K_ X↑
-_l_ →          _Z_ reset         _s_wap                       _L_ X→
-_F_ollow       _D_lt Other       _S_ave
-_SPC_ cancel   _o_nly this       _d_elete
+_h_ ←           _I_ vertical      _b_uffer      _+_ maximize     _H_ X←
+_j_ ↓           _i_ horizontal    _f_ind files  _-_ minimize     _J_ X↓
+_k_ ↑           _z_ undo          _a_ce 1                      _K_ X↑
+_l_ →           _Z_ reset         _s_wap                       _L_ X→
+_F_ollow        _D_lt Other       _S_ave
+_q_ cancel      _o_nly this       _d_elete
 "
    ("h" windmove-left)
    ("j" windmove-down)
    ("k" windmove-up)
    ("l" windmove-right)
-   ("H" evil-window-move-far-left)
-   ("J" evil-window-move-very-bottom)
-   ("K" evil-window-move-very-top)
-   ("L" evil-window-move-far-right)
+   ("H" (lambda ()
+          (interactive)
+          (neotree-hide)
+          (evil-window-move-far-left))
+    )
+   ("J" (lambda ()
+          (interactive)
+          (neotree-hide)
+          (evil-window-move-very-bottom))
+    )
+   ("K" (lambda ()
+          (interactive)
+          (neotree-hide)
+          (evil-window-move-very-top))
+    )
+   ("L" (lambda ()
+          (interactive)
+          (neotree-hide)
+          (evil-window-move-far-right))
+    )
    ("b" helm-mini)
    ("f" helm-find-files)
    ("F" follow-mode)
@@ -132,12 +148,12 @@ _SPC_ cancel   _o_nly this       _d_elete
           (ace-window 1)
           (add-hook 'ace-window-end-once-hook
                     'hydra-window/body))
-       )
+    )
    ("I" (lambda ()
           (interactive)
           (split-window-right)
           (windmove-right))
-       )
+    )
    ("i" (lambda ()
           (interactive)
           (split-window-below)
@@ -145,9 +161,11 @@ _SPC_ cancel   _o_nly this       _d_elete
         )
    ("s" (lambda ()
           (interactive)
+          (neotree-hide)
           (ace-window 4)
           (add-hook 'ace-window-end-once-hook
-                    'hydra-window/body)))
+                    'hydra-window/body))
+    )
    ("S" save-buffer)
    ("d" delete-window)
    ("D" (lambda ()
@@ -155,13 +173,13 @@ _SPC_ cancel   _o_nly this       _d_elete
           (ace-window 16)
           (add-hook 'ace-window-end-once-hook
                     'hydra-window/body))
-       )
+    )
    ("o" delete-other-windows)
    ("+" maximize-window)
    ("-" minimize-window)
    ("z" (progn
           (winner-undo)
           (setq this-command 'winner-undo))
-   )
+    )
    ("Z" winner-redo)
-   ("SPC" nil)))
+   ("q" nil)))
