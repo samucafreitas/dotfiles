@@ -15,7 +15,7 @@
 (eval-after-load 'hlinum
   '(progn
      (set-face-attribute 'linum-highlight-face nil
-                         :background "#000000"
+                         :background "#120312"
                          :foreground "#DB3F62")))
 (evil-mode t)
 (global-undo-tree-mode -1)
