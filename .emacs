@@ -182,6 +182,7 @@ _q_ cancel      _o_nly this       _d_elete
         )
    ("s" (lambda ()
           (interactive)
+          (neotree-hide)
           (ace-window 4)
           (add-hook 'ace-window-end-once-hook
                     'hydra-window/body))
