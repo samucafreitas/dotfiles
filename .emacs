@@ -188,7 +188,7 @@ _q_ cancel      _o_nly this       _d_elete
 (defun my-c-mode-common-hook ()
  (c-set-offset 'substatement-open 0)
  (setq c++-tab-always-indent t)
- (setq c-basic-offset 4) 
+ (setq c-basic-offset 4)
  (setq c-indent-level 4)
 
  (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
