@@ -3,7 +3,7 @@
 source $HOME/dotfiles/util.sh
 
 function select_branch {
-    info_msg "Select a branch"
+    info_msg "Select a branch!"
     select branch in "master" "nbk"; do
         case $branch in
             master) return;;
