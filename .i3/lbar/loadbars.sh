@@ -8,7 +8,7 @@ fi
 # kill 0: kill all processes in the current process
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-font="FantasqueSansMono-10"
+font="FantasqueSansMono Nerd Font-10"
 icon_font="FontAwesome-10"
 fg_color="#ffffff"
 bg_color="#20202050" #BGA

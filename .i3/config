@@ -9,8 +9,8 @@
 # Date              : 07 jun 2016
 # Last Modified Date: 02 jul 2018
 # Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
-font pango: Fantasque Sans Mono
-set $ft Fantasque Sans Mono
+font pango: FantasqueSansMono Nerd Font
+set $ft FantasqueSansMono Nerd Font
 
 new_window pixel 2
 new_float pixel 2

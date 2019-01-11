@@ -50,6 +50,6 @@ elems=28
     echo "^ca(1, i3-msg exit) ^fg(${white})^fn($font)^fn()^fg() Exit ^ca()"
     echo "^ca(1, lock) ^fg(${white})^fn($font)^fn()^fg() Lock ^ca()"
 
-) | dzen2 -p -fn "FantasqueSansMono" -fg $red -bg $black \
+) | dzen2 -p -fn "FantasqueSansMono Nerd Font" -fg $red -bg $black \
     -x $X -y $Y -w 137 -l $elems -m v \
     -e 'onstart=uncollapse;button3=exit' &
