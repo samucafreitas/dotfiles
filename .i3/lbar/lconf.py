@@ -6,6 +6,6 @@ COLOR4 = '#ffffff' #white
 
 #icons {separator, workspaces, player, datetime}
 SEP_ICON=''
-WPS_ICONS = ['','','','','','']
+WPS_ICONS = ['','λ','','','','']
 PL_ICONS = {'prev':'', 'stop':'', 'next':'', 'headphone':'', 'vol':''}
 DT_ICONS = {'cal':'', 'clock':''}
