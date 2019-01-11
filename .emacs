@@ -68,14 +68,21 @@
 
 (defalias 'list-buffers 'ibuffer)
 
+;; Global settings (defaults)
+(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+      doom-themes-enable-italic t) ; if nil, italics is universally disabled
+
+;; Corrects (and improves) org-mode's native fontification.
+(doom-themes-org-config)
+
 (set-face-attribute 'default nil :font "Inconsolata For Powerline-13")
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "#af87d7" :foreground "#151718"))))
- '(neo-dir-link-face ((t (:foreground "#af87d7" :slant normal :weight medium :height 120 :family "InconsolataForPowerline Nerd Font"))))
+ '(cursor ((t (:background "#AF87D7" :foreground "#151718"))))
+ '(neo-dir-link-face ((t (:foreground "#AF87D7" :slant normal :weight medium :height 120 :family "InconsolataForPowerline Nerd Font"))))
  '(neo-file-link-face ((t (:foreground "White" :weight medium :height 120 :family "InconsolataForPowerline Nerd Font")))))
 
 (custom-set-variables
@@ -123,6 +130,12 @@
  '(vc-annotate-very-old-color nil)
  '(wakatime-cli-path "/usr/local/bin/wakatime")
  '(wakatime-python-bin nil))
+
+(eval-after-load 'hlinum
+  '(progn
+     (set-face-attribute 'linum-highlight-face nil
+                         :background "#282A36"
+                         :foreground "#AF87D7")))
 
 (put 'upcase-region 'disabled nil)
 
@@ -182,6 +195,7 @@ _q_ cancel      _o_nly this       _d_elete
         )
    ("s" (lambda ()
           (interactive)
+          (neotree-hide)
           (ace-window 4)
           (add-hook 'ace-window-end-once-hook
                     'hydra-window/body))
@@ -203,10 +217,3 @@ _q_ cancel      _o_nly this       _d_elete
     )
    ("Z" winner-redo)
    ("q" nil)))
-
-;; Global settings (defaults)
-(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-      doom-themes-enable-italic t) ; if nil, italics is universally disabled
-
-;; Corrects (and improves) org-mode's native fontification.
-(doom-themes-org-config)
