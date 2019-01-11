@@ -3,7 +3,7 @@
 # Symbolic links
 ln -s ~/dotfiles/.vimrc ~/
 ln -s ~/dotfiles/.spacemacs ~/
-ln -s ~/dotfiles/.vim/colors/redmilky.vim ~/.vim/colors/redmilky.vim
+ln -s ~/dotfiles/.vim/colors/deskred.vim ~/.vim/colors/deskred.vim
 ln -s ~/dotfiles/.comptonrc ~/
 ln -s ~/dotfiles/.tmux.conf ~/
 ln -s ~/dotfiles/.msf ~/
@@ -27,3 +27,5 @@ ln -s ~/dotfiles/.wakatime.cfg ~/
 ln -s ~/dotfiles/.config/rofi/config ~/.config/rofi/config
 ln -s ~/dotfiles/.config/termite/config ~/.config/termite/config
 ln -s ~/dotfiles/.asoundrc ~/
+ln -s ~/dotfiles/.fonts ~/
+
