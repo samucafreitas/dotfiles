@@ -7,3 +7,8 @@
 + font: Inconsolata
 + bar: lemonbar
 + terminal: urxvt
+
+# Installation
+```shell
+bash <(curl -s -L https://bitbucket.org/samucafreitas/dotfiles/raw/master/setup.sh)
+```
