@@ -10,7 +10,7 @@
     font = Arial Unicode Ms 10
     format = "<b>%s</b>\n%b"
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
-    geometry = "0-0+33"
+    geometry = "270x20-10+33"
     history_length = 20
     horizontal_padding = 30
     idle_threshold = 120

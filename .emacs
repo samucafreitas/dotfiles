@@ -98,7 +98,7 @@
  '(linum-format " %5i ")
  '(package-selected-packages
    (quote
-    (hlinum evil-collection helm airline-themes undo-tree underwater-theme company-jedi doom-themes hydra sml-mode lsp-javascript-typescript lsp-typescript magit spacemacs-theme rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##)))
+    (jedi hlinum evil-collection helm airline-themes undo-tree underwater-theme company-jedi doom-themes hydra sml-mode lsp-javascript-typescript lsp-typescript magit spacemacs-theme rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##)))
  '(vc-annotate-background "#1b1d1e")
  '(vc-annotate-color-map
    (list
