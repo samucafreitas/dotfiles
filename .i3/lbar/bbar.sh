@@ -58,5 +58,5 @@ gpu() {
 while true; do
     echo "%{l}%{B${red}}%{F${black}} ${monitor_icon} %{F-}%{B-}%{+u}%{U${red}}$(net)$(mem)$(disk)$(cpu)$(gpu)%{-u}%{r} $(curUser)"
     sleep 10s
-done | lemonbar -p -b -u 2 -f "FantasqueSansMono Nerd Font-10" -f "FontAwesome-10" -g x20 &
+done | lemonbar -p -b -u 2 -f "FantasqueSansMono-10" -f "FontAwesome-10" -g x20 &
 wait
