@@ -6,6 +6,9 @@
 (require 'airline-themes)
 (require 'hydra-examples)
 
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
 (setq evil-want-integration t)
 (setq evil-want-keybinding nil)
 (require 'evil)
@@ -36,6 +39,7 @@
 (define-key evil-insert-state-map (kbd "M-j M-k") 'evil-normal-state)
 (define-key evil-visual-state-map (kbd "C-c") 'kill-ring-save)
 (define-key evil-insert-state-map (kbd "C-v") 'clipboard-yank)
+(define-key evil-insert-state-map (kbd "C-u") 'undo-only)
 
 (global-set-key (kbd "C-c C-c i") 'split-window-below)
 (global-set-key (kbd "C-c C-c I") 'split-window-right)
