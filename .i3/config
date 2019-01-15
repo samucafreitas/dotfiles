@@ -85,9 +85,9 @@ bindsym XF86AudioRaiseVolume exec mpc volume +5
 # Bindsym's apps
 bindsym $mod+mod1+c exec google-chrome-stable
 bindsym $mod+mod1+f exec firefox
-bindsym $mod+mod1+v exec urxvt -e vim
-bindsym $mod+mod1+n exec urxvt -e ncmpcpp
-bindsym $mod+mod1+h exec urxvt -e htop
+bindsym $mod+mod1+v exec termite -e vim
+bindsym $mod+mod1+n exec termite -e ncmpcpp
+bindsym $mod+mod1+h exec termite -e htop
 bindsym $mod+mod1+g exec gimp
 bindsym $mod+mod1+p exec /opt/p5js/p5
 bindsym $mod+mod1+t exec /opt/Telegram/Telegram
