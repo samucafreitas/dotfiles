@@ -26,3 +26,6 @@ ln -s $DOTFILES/bin $HOME/
 ln -s $DOTFILES/.Xmodmap $HOME/
 ln -s $DOTFILES/.emacs $HOME/
 ln -s $DOTFILES/.config/rofi/config $HOME/.config/rofi/config
+ln -s $DOTFILES/.config/termite/config $HOME/.config/termite/config
+ln -s $DOTFILES/.fonts $HOME/
+ln -s $DOTFILES/.cvimrc $HOME/.cvimrc
