@@ -3,6 +3,9 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'load-path "~/.emacs.d/evil")
 
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
 (require 'neotree)
 (require 'airline-themes)
 (require 'hydra-examples)
@@ -29,9 +32,13 @@
 
 (define-key neotree-mode-map (kbd "i") #'neotree-enter-horizontal-split)
 (define-key neotree-mode-map (kbd "I") #'neotree-enter-vertical-split)
+
+;; Defines evil keys
 (define-key evil-insert-state-map (kbd "M-j M-k") 'evil-normal-state)
 (define-key evil-visual-state-map (kbd "C-c") 'kill-ring-save)
 (define-key evil-insert-state-map (kbd "C-v") 'clipboard-yank)
+(define-key evil-insert-state-map (kbd "C-u") 'undo-only)
+(define-key evil-normal-state-map (kbd "u") nil)
 
 (global-set-key (kbd "C-c C-c i") 'split-window-below)
 (global-set-key (kbd "C-c C-c I") 'split-window-right)
@@ -75,7 +82,7 @@
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
 
-(set-face-attribute 'default nil :font "Inconsolata For Powerline-13")
+(set-face-attribute 'default nil :font "InconsolataForPowerline Nerd Font-13")
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
