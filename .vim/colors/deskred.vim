@@ -16,12 +16,12 @@ if ( &t_Co >= 255 || $TERM =~? "256color" )
   hi Normal         term=none cterm=none ctermfg=255  ctermbg=none
   hi Boolean        term=none cterm=bold ctermfg=132  ctermbg=none
   hi Character      term=none cterm=none ctermfg=197  ctermbg=none
-  hi Comment        term=none cterm=none ctermfg=238  ctermbg=234
+  hi Comment        term=none cterm=none ctermfg=131  ctermbg=none
   hi Conditional    term=none cterm=bold ctermfg=197  ctermbg=none
   hi Constant       term=none cterm=bold ctermfg=197  ctermbg=none
   hi Cursor         term=none cterm=bold ctermfg=232  ctermbg=109
-  hi CursorLine     term=none cterm=none ctermfg=none ctermbg=234
-  hi CursorLineNr   term=none cterm=bold ctermfg=197  ctermbg=234
+  hi CursorLine     term=none cterm=none ctermfg=none ctermbg=235
+  hi CursorLineNr   term=none cterm=bold ctermfg=197  ctermbg=235
   hi CursorColumn   term=none cterm=bold ctermfg=none ctermbg=234
   hi Debug          term=none cterm=bold ctermfg=181  ctermbg=none
   hi Define         term=none cterm=bold ctermfg=97   ctermbg=none
