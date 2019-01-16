@@ -1,0 +1,53 @@
+" Settings
+set nohud
+set nosmoothscroll
+set noautofocus " stops focusing on an input box when sites load
+set typelinkhints
+let searchlimit = 30
+let scrollstep = 70
+let barposition = "bottom"
+
+let locale = "br"
+let hintcharacters = "abc123"
+let searchengine dogpile = "http://www.dogpile.com/search/web?q=%s"
+let searchengine withbase = ["http://www.dogpile.com", "http://www.dogpile.com/search/web?q=%s"]
+
+" alias ':g' to ':tabnew google'
+command g tabnew google
+
+let completionengines = ["google", "amazon", "imdb", "dogpile"]
+
+let searchalias g = "google" " Create a shortcut for search engines.
+                             " For example, typing ':tabnew g example'"
+let mapleader = ","
+
+" Mappings
+map r reloadTabUncached
+map x :restore<Space>
+
+
+" Use paste buffer in mappings
+map T :tabnew wikipedia @"<CR>
+
+" Code blocks (see below for more info)
+getIP() -> {{
+httpRequest({url: 'http://api.ipify.org/?format=json', json: true},
+            function(res) { Status.setMessage('IP: ' + res.ip); });
+}}
+
+" Displays your public IP address in the status bar
+map ci :call getIP<CR>
+
+map H previousTab
+map L nextTab
+map b :buffer<Space>
+map B :buffer<Space>
+map u lastClosedTab
+map O :tabnew<Space>
+map T :tabnew&<Space>
+map ; :
+map - openLinkSearchBar
+map p createActiveTabbedHint
+
+let configpath = '/home/samuel/.cvimrc'
+set localconfig

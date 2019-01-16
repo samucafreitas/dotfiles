@@ -30,3 +30,4 @@ ln -s $DOTFILES/.config/rofi/config $HOME/.config/rofi/config
 ln -s $DOTFILES/.config/termite/config $HOME/.config/termite/config
 ln -s $DOTFILES/.asoundrc $HOME/
 ln -s $DOTFILES/.fonts $HOME/
+ln -s $DOTFILES/.cvimrc $HOME/
