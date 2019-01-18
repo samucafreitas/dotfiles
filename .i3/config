@@ -7,7 +7,7 @@
 # File              : config
 # Author            : Sam Uel <samuelfreitas@linuxmail.org>
 # Date              : 07 jun 2016
-# Last Modified Date: 02 jul 2018
+# Last Modified Date: 18 jan 2019
 # Last Modified By  : Sam Uel <samuelfreitas@linuxmail.org>
 font pango: FantasqueSansMono
 set $ft FantasqueSansMono
@@ -52,7 +52,7 @@ set $magenta            #AF87D7
 
 # class                 border      backgr.     text        split
 client.focused          $red        $red        $black      $darkred
-client.focused_inactive $grey       $grey       $lightgrey  $grey
+client.focused_inactive $red        $red        $black      $darkred
 client.unfocused        $black      $black      $lightgrey  $grey
 client.urgent           $red        $red        $black      $darkred
 client.background       $back
@@ -74,7 +74,7 @@ bindcode $mod+mod1+40 exec i3-dmenu-desktop --dmenu="dmenu -l 5 -fn 'Arial Unico
 bindcode $mod+23 workspace next
 bindcode $mod+66 workspace prev
 
-# player control
+# Player control
 bindsym XF86AudioStop exec python3 ~/.i3/lbar/mpdcontrol.py stopBtn
 bindsym XF86AudioPlay exec python3 ~/.i3/lbar/mpdcontrol.py playBtn
 bindsym XF86AudioPrev exec python3 ~/.i3/lbar/mpdcontrol.py prevBtn
