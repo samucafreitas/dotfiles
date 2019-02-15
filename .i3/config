@@ -15,22 +15,24 @@ set $ft FantasqueSansMono
 new_window pixel 2
 new_float pixel 2
 
+exec --no-startup-id termite -e mode
 #exec --no-startup-id google-chrome-stable
 #exec --no-startup-id urxvt -e tmux
 #exec --no-startup-id thunar
-exec --no-startup-id xpad
+#exec --no-startup-id xpad
 #exec --no-startup-id emacs
 
 # Habilita o floating mode e move os containers
 for_window [title="^urxvt$"] floating enable, resize set 730 435, move left 901px, move up 271px
 for_window [class="Termite"] floating enable, resize set 780 435, move left 901px, move up 271px
-for_window [title="^ncmpcpp$"] floating enable, resize set 860 430, move left 150px
-for_window [title="^htop$"] floating enable, resize set 960 630, move left 150px, move up 100px
+for_window [title="^ncmpcpp$"] floating enable, resize set 860 430, move position center
+for_window [title="^htop$"] floating enable, resize set 960 630, move position center
 for_window [title="^Telegram$"] resize set 700 1000
-for_window [title="^Thunar$"] floating enable, resize set 1050 780
+for_window [title="^Thunar$"] floating enable, resize set 1050 780, move position center
 for_window [class="xpad"] floating enable, move container to workspace 6: bookmark, resize set  320 320
 for_window [workspace="4: chat"] floating enable
 for_window [workspace="5: archive"] floating enable
+
 assign [class="Firefox"] → 1: web
 assign [class="Google-chrome"] → 1: web
 #assign [class="^TelegramDesktop$"] → 4: chat
