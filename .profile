@@ -19,3 +19,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Ruby
 export PATH=$PATH:$HOME/.gem/ruby/2.6.0/bin
+
+# Flutter
+export PATH=$PATH:$HOME/flutter/bin
