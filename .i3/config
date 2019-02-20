@@ -54,7 +54,7 @@ set $magenta            #AF87D7
 
 # class                 border      backgr.     text        split
 client.focused          $red        $red        $black      $darkred
-client.focused_inactive $red        $red        $black      $darkred
+client.focused_inactive $black      $black      $red        $darkred
 client.unfocused        $black      $black      $lightgrey  $grey
 client.urgent           $red        $red        $black      $darkred
 client.background       $back
