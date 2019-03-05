@@ -18,26 +18,33 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-source .profile
 numlockx &
-lxpolkit &
-compton -CG --config ~/.comptonrc &
 setxkbmap -option caps:escape
-dunst -conf ~/.dunstrc &
-macopix --sockmsg &
-thunar --daemon &
-xpad &
-xset r rate 200 50 &
+xset r rate 199 50 &
 
 [[ -f ~/.Xresources ]] && xrdb -merge "${HOME}/.Xresources"
 
-case $1 in
+function _apps {
+    source .profile
+    lxpolkit &
+    compton -CG --config ~/.comptonrc &
+    dunst -conf ~/.dunstrc &
+    macopix --sockmsg &
+    thunar --daemon &
+    xpad &
+}
+
+case $2 in
     xfce)
-            exec startxfce4 ;;
+        exec startxfce4 ;;
     xmonad)
-            feh --bg-scale ~/wallpapers/purple/girlUmb.jpg;
-            exec xmonad ;;
+        _apps
+        feh --bg-scale ~/wallpapers/purple/girlUmb.jpg;
+        exec xmonad ;;
+    i3|i3wm)
+        _apps
+        feh --bg-scale ~/wallpapers/purple/saint_ignucius.png;
+        exec i3 ;;
     *)
-            feh --bg-scale ~/wallpapers/purple/saint_ignucius.png;
-            exec i3 ;;
+        exec mate-session ;;
 esac
