@@ -24,7 +24,7 @@ def separator(fg_color, bg_color):
 #-----------BLOCKS
 ############
 def vol():
-    volume = getoutput("amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]'").split('\n')[0]
+    volume = getoutput("amixer get Master | awk '$0~/%/{print $5}' | tr -d '[]'").split('\n')[0]
     return '%{{A4: amixer -q sset Master 3%+:}}%{{A5: amixer -q sset Master 3%-:}}'\
             '{sep}%{{B{bgColor}}}%{{F{fgColor}}} {volIcon} {vol} %{{F-}}%{{B-}}%{{A}}%{{A}}'\
             .format(sep=separator(COLOR1, '-'),
