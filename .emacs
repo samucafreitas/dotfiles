@@ -6,6 +6,7 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
+(require 'all-the-icons)
 (require 'neotree)
 (require 'airline-themes)
 (require 'hydra-examples)
@@ -135,7 +136,7 @@
     (cons 340 "#505050")
     (cons 360 "#505050")))
  '(vc-annotate-very-old-color nil)
- '(wakatime-cli-path "/usr/local/bin/wakatime")
+ '(wakatime-cli-path "wakatime")
  '(wakatime-python-bin nil))
 
 (eval-after-load 'hlinum
