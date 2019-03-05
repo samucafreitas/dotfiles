@@ -16,16 +16,16 @@ new_window pixel 2
 new_float pixel 2
 
 # Executa algumas aplicações
-#exec --no-startup-id urxvt -e tmux
+exec --no-startup-id termite -e mode
 #exec --no-startup-id google-chrome
 #exec --no-startup-id thunar
 #exec --no-startup-id emacs
-exec --no-startup-id xpad
+#exec --no-startup-id xpad
 
 # Habilita o floating mode, resize e move os containers
-for_window [title="^termite$"] floating enable, resize set 730 435, move left 586px, move up 261px
-for_window [title="^ncmpcpp$"] floating enable, resize set 860 430, move left 150px
-for_window [title="^htop$"] floating enable, resize set 960 630, move left 150px, move up 100px
+for_window [class="^Termite$"] floating enable, resize set 730 435, move left 586px, move up 261px
+for_window [title="^ncmpcpp$"] floating enable, resize set 860 430, move position center
+for_window [title="^htop$"] floating enable, resize set 960 630, move position center
 for_window [title="^Telegram$"] resize set 700 1000
 for_window [title="^Thunar$"] floating enable, resize set 900 680
 for_window [class="^xpad$"] floating enable, resize set 310 320, move container to workspace 6: bookmark
@@ -52,7 +52,7 @@ set $magenta            #AF87D7
 
 # class                 border      backgr.     text        split
 client.focused          $magenta    $magenta    $black      $darkred
-client.focused_inactive $grey       $grey       $lightgrey  $grey
+client.focused_inactive $grey       $grey       $magenta    $grey
 client.unfocused        $black      $black      $lightgrey  $grey
 client.urgent           $magenta    $magenta    $black      $darkred
 client.background       $back
