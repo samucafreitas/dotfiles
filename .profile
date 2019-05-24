@@ -11,7 +11,7 @@ export SWT_GTK3=1
 export PATH=$PATH:$HOME/bin
 
 # ANDROID_HOME config
-export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_HOME=/corpoceleste/m16/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin

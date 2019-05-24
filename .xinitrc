@@ -22,7 +22,7 @@ source $HOME/.profile
 source $HOME/.autopair.zsh
 numlockx &
 /usr/lib/xfce-polkit/xfce-polkit &
-compton -CG --config ~/.comptonrc &
+compton -GCb --backend glx --config ~/.comptonrc &
 setxkbmap -option caps:escape
 setxkbmap -model abnt2 -layout br -variant abnt2
 dunst -conf ~/.dunstrc &
