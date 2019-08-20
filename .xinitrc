@@ -30,15 +30,18 @@ macopix --sockmsg &
 thunar --daemon &
 xset r rate 200 50 &
 
+#Disable auto-negotiation
+ethtool -s enp3s0 autoneg off speed 100 duplex full &
+
 [[ -f ~/.Xresources ]] && xrdb -merge "${HOME}/.Xresources"
 
 case $1 in
     xfce)
-            exec xfce4-session ;;
+        exec xfce4-session ;;
     xmonad)
-            feh --bg-scale ~/wallpapers/purple/girlUmb.jpg;
-            exec xmonad ;;
+        feh --bg-scale ~/wallpapers/purple/girlUmb.jpg;
+        exec xmonad ;;
     *)
-            feh --bg-scale ~/wallpapers/red/minimalism-sunset.jpg;
-            exec i3 ;;
+        feh --bg-scale ~/wallpapers/red/minimalism-sunset.jpg;
+        exec i3 ;;
 esac

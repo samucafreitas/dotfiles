@@ -97,14 +97,41 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
- '(custom-enabled-themes (quote (junio)))
+ '(custom-enabled-themes (quote (doom-molokai)))
  '(custom-safe-themes
    (quote
-    ("d21135150e22e58f8c656ec04530872831baebf5a1c3688030d119c114233c24" "73a13a70fd111a6cd47f3d4be2260b1e4b717dbf635a9caee6442c949fad41cd" "946e871c780b159c4bb9f580537e5d2f7dba1411143194447604ecbaf01bd90c" "96998f6f11ef9f551b427b8853d947a7857ea5a578c75aa9c4e7c73fe04d10b4" "c48551a5fb7b9fc019bf3f61ebf14cf7c9cdca79bcb2a4219195371c02268f11" "e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "3cd28471e80be3bd2657ca3f03fbb2884ab669662271794360866ab60b6cb6e6" "e9776d12e4ccb722a2a732c6e80423331bcb93f02e089ba2a4b02e85de1cf00e" "72a81c54c97b9e5efcc3ea214382615649ebb539cb4f2fe3a46cd12af72c7607" "b050365105e429cb517d98f9a267d30c89336e36b109a1723d95bc0f7ce8c11d" "8d5f22f7dfd3b2e4fc2f2da46ee71065a9474d0ac726b98f647bc3c7e39f2819" "6ac7c0f959f0d7853915012e78ff70150bfbe2a69a1b703c3ac4184f9ae3ae02" "7366916327c60fdf17b53b4ac7f565866c38e1b4a27345fe7facbf16b7a4e9e8" "3fa81193ab414a4d54cde427c2662337c2cab5dd4eb17ffff0d90bca97581eb6" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "987b709680284a5858d5fe7e4e428463a20dfabe0a6f2a6146b3b8c7c529f08b" "3cc2385c39257fed66238921602d8104d8fd6266ad88a006d0a4325336f5ee02" "58c6711a3b568437bab07a30385d34aacf64156cc5137ea20e799984f4227265" "3d5ef3d7ed58c9ad321f05360ad8a6b24585b9c49abcee67bdcbb0fe583a6950" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" default)))
+    ("6d589ac0e52375d311afaa745205abb6ccb3b21f6ba037104d71111e7e76a3fc" "fe666e5ac37c2dfcf80074e88b9252c71a22b6f5d2f566df9a7aa4f9bea55ef8" "f0dc4ddca147f3c7b1c7397141b888562a48d9888f1595d69572db73be99a024" "fd944f09d4d0c4d4a3c82bd7b3360f17e3ada8adf29f28199d09308ba01cc092" "8aca557e9a17174d8f847fb02870cb2bb67f3b6e808e46c0e54a44e3e18e1020" "6b289bab28a7e511f9c54496be647dc60f5bd8f9917c9495978762b99d8c96a0" "151bde695af0b0e69c3846500f58d9a0ca8cb2d447da68d7fbf4154dcf818ebc" "d1b4990bd599f5e2186c3f75769a2c5334063e9e541e37514942c27975700370" "6b2636879127bf6124ce541b1b2824800afc49c6ccd65439d6eb987dbf200c36" "3eb93cd9a0da0f3e86b5d932ac0e3b5f0f50de7a0b805d4eb1f67782e9eb67a4" "a8c210aa94c4eae642a34aaf1c5c0552855dfca2153fa6dd23f3031ce19453d4" "d2e9c7e31e574bf38f4b0fb927aaff20c1e5f92f72001102758005e53d77b8c9" "d21135150e22e58f8c656ec04530872831baebf5a1c3688030d119c114233c24" "73a13a70fd111a6cd47f3d4be2260b1e4b717dbf635a9caee6442c949fad41cd" "946e871c780b159c4bb9f580537e5d2f7dba1411143194447604ecbaf01bd90c" "96998f6f11ef9f551b427b8853d947a7857ea5a578c75aa9c4e7c73fe04d10b4" "c48551a5fb7b9fc019bf3f61ebf14cf7c9cdca79bcb2a4219195371c02268f11" "e0d42a58c84161a0744ceab595370cbe290949968ab62273aed6212df0ea94b4" "3cd28471e80be3bd2657ca3f03fbb2884ab669662271794360866ab60b6cb6e6" "e9776d12e4ccb722a2a732c6e80423331bcb93f02e089ba2a4b02e85de1cf00e" "72a81c54c97b9e5efcc3ea214382615649ebb539cb4f2fe3a46cd12af72c7607" "b050365105e429cb517d98f9a267d30c89336e36b109a1723d95bc0f7ce8c11d" "8d5f22f7dfd3b2e4fc2f2da46ee71065a9474d0ac726b98f647bc3c7e39f2819" "6ac7c0f959f0d7853915012e78ff70150bfbe2a69a1b703c3ac4184f9ae3ae02" "7366916327c60fdf17b53b4ac7f565866c38e1b4a27345fe7facbf16b7a4e9e8" "3fa81193ab414a4d54cde427c2662337c2cab5dd4eb17ffff0d90bca97581eb6" "ed0b4fc082715fc1d6a547650752cd8ec76c400ef72eb159543db1770a27caa7" "987b709680284a5858d5fe7e4e428463a20dfabe0a6f2a6146b3b8c7c529f08b" "3cc2385c39257fed66238921602d8104d8fd6266ad88a006d0a4325336f5ee02" "58c6711a3b568437bab07a30385d34aacf64156cc5137ea20e799984f4227265" "3d5ef3d7ed58c9ad321f05360ad8a6b24585b9c49abcee67bdcbb0fe583a6950" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" default)))
+ '(fci-rule-color "#AEBACF")
+ '(jdee-db-active-breakpoint-face-colors (cons "#F0F4FC" "#5d86b6"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#F0F4FC" "#4F894C"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#F0F4FC" "#B8C5DB"))
  '(linum-format " %5i ")
+ '(objed-cursor-color "#99324B")
  '(package-selected-packages
    (quote
     (racket-mode sml-mode evil-collection evil-magit magit rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##)))
+ '(vc-annotate-background "#E5E9F0")
+ '(vc-annotate-color-map
+   (list
+    (cons 20 "#4F894C")
+    (cons 40 "#688232")
+    (cons 60 "#817b19")
+    (cons 80 "#9A7500")
+    (cons 100 "#a0640c")
+    (cons 120 "#a65419")
+    (cons 140 "#AC4426")
+    (cons 160 "#a53f37")
+    (cons 180 "#9e3a49")
+    (cons 200 "#97365B")
+    (cons 220 "#973455")
+    (cons 240 "#983350")
+    (cons 260 "#99324B")
+    (cons 280 "#a0566f")
+    (cons 300 "#a87b93")
+    (cons 320 "#b0a0b6")
+    (cons 340 "#AEBACF")
+    (cons 360 "#AEBACF")))
+ '(vc-annotate-very-old-color nil)
  '(wakatime-cli-path "/usr/bin/wakatime")
  '(wakatime-python-bin nil))
 
@@ -116,7 +143,7 @@
 -------------------------------------------------------------------------
 _h_ ←           _I_ vertical      _b_uffer      _+_ maximize     _H_ X←
 _j_ ↓           _i_ horizontal    _f_ind files  _-_ minimize     _J_ X↓
-_k_ ↑           _z_ undo          _a_ce 1                      _K_ X↑
+_k_ ↑           _z_ undo          _a_ce                        _K_ X↑
 _l_ →           _Z_ reset         _s_wap                       _L_ X→
 _F_ollow        _D_lt Other       _S_ave
 _q_ cancel      _o_nly this       _d_elete
@@ -202,3 +229,8 @@ _q_ cancel      _o_nly this       _d_elete
  )
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+(defun nolinum ()
+  (linum-mode)
+)
+(add-hook 'org-mode-hook 'nolinum)

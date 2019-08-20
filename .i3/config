@@ -19,7 +19,7 @@ exec --no-startup-id termite -e mode
 #exec --no-startup-id google-chrome-stable
 #exec --no-startup-id urxvt -e tmux
 #exec --no-startup-id thunar
-#exec --no-startup-id xpad
+exec --no-startup-id indicator-stickynotes
 #exec --no-startup-id emacs
 
 # Habilita o floating mode e move os containers
@@ -29,7 +29,7 @@ for_window [title="^ncmpcpp$"] floating enable, resize set 860 430, move positio
 for_window [title="^htop$"] floating enable, resize set 960 630, move position center
 for_window [title="^Telegram$"] resize set 700 1000
 for_window [title="^Thunar$"] floating enable, resize set 1050 780, move position center
-for_window [class="xpad"] floating enable, move container to workspace 6: bookmark, resize set  320 320
+for_window [class="Indicator-stickynotes"] floating enable, move container to workspace 6: bookmark
 for_window [workspace="4: chat"] floating enable
 for_window [workspace="5: archive"] floating enable
 
