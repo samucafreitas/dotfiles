@@ -24,7 +24,7 @@ def format(workspaces, outputs):
     for wps in workspaces:
         output = None
         for output_ in outputs:
-            if output_['name'] == wps['output']:
+            if output_.name == wps.output:
                 output = output_
                 break
         if not output: continue
@@ -33,17 +33,17 @@ def format(workspaces, outputs):
             ws_l += '%{{B{bgColor}}} %{{F{fgColor}}} {wpIcon} %{{F-}} %{{B-}}'\
                     .format(bgColor=COLOR2,
                             fgColor=COLOR1,
-                            wpIcon=WPS_ICONS[wps['num']-1])
+                            wpIcon=WPS_ICONS[wps.num - 1])
         elif get_state(wps, output) == 'URG':
             ws_l += '%{{B{bgColor}}} %{{F{fgColor}}} {wpIcon} %{{F-}} %{{B-}}'\
                     .format(bgColor=COLOR1,
                             fgColor=COLOR2,
-                            wpIcon=WPS_ICONS[wps['num']-1])
+                            wpIcon=WPS_ICONS[wps.num - 1])
         else:
             ws_l += '%{{B{bgColor}}} %{{F{fgColor}}} {wpIcon} %{{F-}} %{{B-}}'\
                     .format(bgColor=COLOR1,
                             fgColor=COLOR3,
-                            wpIcon=WPS_ICONS[wps['num']-1])
+                            wpIcon=WPS_ICONS[wps.num - 1])
     return ws_l
 
 def get_state(wps, output):
@@ -52,11 +52,11 @@ def get_state(wps, output):
     inactive = 'INA'
     urgent = 'URG'
 
-    if wps['focused']:
-        if output['current_workspace'] == wps['name']:
+    if wps.focused:
+        if output.current_workspace == wps.name:
             return focused
         return active
-    elif wps['urgent']:
+    elif wps.urgent:
         return urgent
 
     return inactive

@@ -27,7 +27,7 @@ xset r rate 199 50 &
 function _apps {
     source .profile
     lxpolkit &
-    compton -CG --config ~/.comptonrc &
+    picom -CG --config ~/.comptonrc &
     dunst -conf ~/.dunstrc &
     macopix --sockmsg &
     thunar --daemon &
@@ -43,7 +43,7 @@ case $2 in
         exec xmonad ;;
     i3|i3wm)
         _apps
-        feh --bg-scale ~/wallpapers/purple/saint_ignucius.png;
+        feh --bg-scale ~/wallpapers/purple/wallhaven.jpg;
         exec i3 ;;
     *)
         exec mate-session ;;
