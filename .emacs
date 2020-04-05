@@ -3,6 +3,11 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'load-path "~/.emacs.d/evil")
 
+;; which-key: displays available keybindings in popup
+(add-to-list 'load-path "path/to/which-key.el")
+(require 'which-key)
+(which-key-mode)
+
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
@@ -113,7 +118,7 @@
  '(linum-format " %5i ")
  '(package-selected-packages
    (quote
-    (jedi hlinum evil-collection helm airline-themes undo-tree underwater-theme company-jedi doom-themes hydra sml-mode lsp-javascript-typescript lsp-typescript magit spacemacs-theme rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##)))
+    (which-key jedi hlinum evil-collection helm airline-themes undo-tree underwater-theme company-jedi doom-themes hydra sml-mode lsp-javascript-typescript lsp-typescript magit spacemacs-theme rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##)))
  '(vc-annotate-background "#1b1d1e")
  '(vc-annotate-color-map
    (list
@@ -152,11 +157,11 @@
 ^Movement^        ^Split^         ^Switch^       ^Resize^      ^Win. move^
 -------------------------------------------------------------------------
 _h_ ←          _I_ vertical      _b_uffer      _+_ maximize     _H_ X←
-_j_ ↓           _i_ horizontal    _f_ind files  _-_ minimize     _J_ X↓
-_k_ ↑           _z_ undo          _a_ce 1                      _K_ X↑
+_j_ ↓          _i_ horizontal    _f_ind files  _-_ minimize     _J_ X↓
+_k_ ↑          _z_ undo          _a_ce                        _K_ X↑
 _l_ →          _Z_ reset         _s_wap                       _L_ X→
-_F_ollow        _D_lt Other       _S_ave
-_q_ cancel      _o_nly this       _d_elete
+_F_ollow       _D_lt Other       _S_ave
+_q_ cancel     _o_nly this       _d_elete
 "
    ("h" windmove-left)
    ("j" windmove-down)
