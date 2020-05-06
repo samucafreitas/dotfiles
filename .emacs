@@ -2,6 +2,12 @@
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'load-path "~/.emacs.d/evil")
+
+;; Which-key
+(add-to-list 'load-path "path/to/which-key.el")
+(require 'which-key)
+(which-key-mode)
+
 (require 'neotree)
 (require 'airline-themes)
 (require 'hydra-examples)
@@ -109,7 +115,7 @@
  '(objed-cursor-color "#99324B")
  '(package-selected-packages
    (quote
-    (racket-mode sml-mode evil-collection evil-magit magit rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##)))
+    (which-key racket-mode sml-mode evil-collection evil-magit magit rainbow-mode swiper hideshow-org wakatime-mode ace-window projectile all-the-icons neotree gruvbox-theme sublime-themes smex ##)))
  '(vc-annotate-background "#E5E9F0")
  '(vc-annotate-color-map
    (list
