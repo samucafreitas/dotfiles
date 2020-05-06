@@ -1,5 +1,7 @@
 # dotfiles
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 ![18-02-2018 Screenshot of Arch Linux](assets/screenshots/18-02-2018-12:37:42.png)
 
 + wm: i3
