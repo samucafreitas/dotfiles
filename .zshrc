@@ -1,6 +1,6 @@
 export ZSH=/home/samuel/.oh-my-zsh
 
-ZSH_THEME="agnoster"
+ZSH_THEME="lambda"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 plugins=(git)

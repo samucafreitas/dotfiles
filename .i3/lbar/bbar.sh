@@ -71,7 +71,7 @@ battery() {
     charging=$(acpi | awk '{print $3}' | sed 's/,//')
     declare -i percent=$(acpi | awk '{print $4}' | sed -e 's/%//' -e 's/,//')
 
-    if [ "$percent" -le 15 ]; then
+    if [ "$percent" -le 15 ] && [ "$charging" != "Charging" ]; then
        $(notify-send "Notebook is dying!!!")
        $(macopix --message-expire 6000 --message "Please, charge your notebook!!!")
     fi

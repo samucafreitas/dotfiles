@@ -65,7 +65,7 @@ set $mod Mod4
 # Terminal (mod+Enter)
 bindcode $mod+36 exec termite
 # Rofi (alt+r)
-bindcode mod1+27 exec rofi -show run -width 9 -lines 5 -font 'lain 11'
+bindcode mod1+27 exec rofi -show run -width 9 -lines 5 -font 'lain 11' -theme purple
 # GTK Theme sector (mod+winkey+a)
 bindcode $mod+mod1+38 exec lxappearance
 # Abre o dmenu (mod+alt+d)
@@ -73,6 +73,10 @@ bindcode $mod+mod1+40 exec i3-dmenu-desktop --dmenu="dmenu -l 5 -fn 'Arial Unico
 # Vai para o próximo ou anterior workspace ativo
 bindcode $mod+23 workspace next
 bindcode $mod+66 workspace prev
+
+# Backlight brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # player control
 bindsym XF86AudioStop exec python3 ~/.i3/lbar/mpdcontrol.py stopBtn
