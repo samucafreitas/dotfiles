@@ -17,8 +17,8 @@ alias ls='els --els-icons=fontawesome'
 alias mw='cd ~/MWORLD/'
 alias audio-hdmi='pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo'
 alias audio-pc='pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo'
-alias hdmi-output='xrandr --output eDP-1 --off && xrandr --output HDMI-1 --auto && i3 restart'
-alias nbk-output='xrandr --output HDMI-1 --off && xrandr --output eDP-1 --auto && i3 restart'
+alias hdmi-output='xrandr --output eDP1 --off && xrandr --output HDMI1 --auto && i3 restart && feh --bg-scale wallpapers/purple/wallhaven.jpg'
+alias nbk-output='xrandr --output HDMI1 --off && xrandr --output eDP1 --auto && i3 restart && feh --bg-scale wallpapers/purple/wallhaven.jpg'
 
 stty -ixon #Disable (XON/XOFF flow control)
 
