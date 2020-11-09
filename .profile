@@ -18,6 +18,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# SDKMAN
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 # Notification daemon
 #case $XDG_CURRENT_DESKTOP in
 #    i3|i3wm|xmonad)

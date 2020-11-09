@@ -19,7 +19,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 numlockx &
-setxkbmap -option caps:escape
+setxkbmap -option caps:escape &
 xset r rate 199 50 &
 
 [[ -f ~/.Xresources ]] && xrdb -merge "${HOME}/.Xresources"

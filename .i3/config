@@ -16,7 +16,7 @@ new_window pixel 2
 new_float pixel 2
 
 # Executa algumas aplicações
-exec --no-startup-id termite -e mode
+exec --no-startup-id termite
 #exec --no-startup-id google-chrome
 #exec --no-startup-id thunar
 #exec --no-startup-id emacs
@@ -31,8 +31,8 @@ for_window [title="^Thunar$"] floating enable, resize set 900 680
 for_window [class="^xpad$"] floating enable, resize set 310 320, move container to workspace 6: bookmark
 for_window [workspace="4: chat"] floating enable
 for_window [workspace="5: archive"] floating enable
-assign [class="^Firefox$"] → 1: web
-assign [class="^Google-chrome$"] → 1: web
+#assign [class="^Firefox$"] → 1: web
+#assign [class="^Google-chrome$"] → 1: web
 #assign [class="^Emacs$"] → 2: code
 #assign [class="^TelegramDesktop$"] → 4: chat
 #assign [title="^tmux$"] → 3: term
@@ -102,8 +102,9 @@ bindsym $mod+ctrl+e exec emacs
 bindsym $mod+ctrl+n exec nautilus
 bindsym $mod+ctrl+m exec macopix --sockmsg
 bindsym $mod+ctrl+t exec thunar
+bindsym $mod+ctrl+d exec dolphin
 bindsym Print exec screenshot
-bindsym mod1+e exec dzenmenu
+#bindsym mod1+e exec dzenmenu
 
 # -----------------------------------------------------------------
 
@@ -149,18 +150,18 @@ bindsym $mod+space focus mode_toggle
 # Troca de workspace
 bindcode mod1+10 workspace 1: web
 bindcode mod1+11 workspace 2: code
-bindcode mod1+12 workspace 3: term
-bindcode mod1+13 workspace 4: chat
-bindcode mod1+14 workspace 5: archive
-bindcode mod1+15 workspace 6: bookmark
+#bindcode mod1+12 workspace 3: term
+#bindcode mod1+13 workspace 4: chat
+#bindcode mod1+14 workspace 5: archive
+#bindcode mod1+15 workspace 6: bookmark
 
 # Move o container para o workspace "x"
 bindcode mod1+Shift+10 move container to workspace 1: web
 bindcode mod1+Shift+11 move container to workspace 2: code
-bindcode mod1+Shift+12 move container to workspace 3: term
-bindcode mod1+Shift+13 move container to workspace 4: chat
-bindcode mod1+Shift+14 move container to workspace 5: archive
-bindcode mod1+Shift+15 move container to workspace 6: bookmark
+#bindcode mod1+Shift+12 move container to workspace 3: term
+#bindcode mod1+Shift+13 move container to workspace 4: chat
+#bindcode mod1+Shift+14 move container to workspace 5: archive
+#bindcode mod1+Shift+15 move container to workspace 6: bookmark
 
 # Recarrega o arquivo de configuração (mod+shitf+c)
 bindcode $mod+Shift+54 reload
@@ -193,5 +194,5 @@ bar {
     i3bar_command  ~/.i3/lbar/loadbars.sh &
 }
 
-gaps inner 5
-gaps outer 5
+#gaps inner 20
+#gaps outer 5

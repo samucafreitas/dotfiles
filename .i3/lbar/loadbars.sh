@@ -12,7 +12,7 @@ font="FantasqueSansMono-11"
 icon_font="FontAwesome-11"
 fg_color="#ffffff"
 bg_color="#20202050" #BGA
-geometry="x30"
+geometry="1920x30"
 
 lbar_fifo="/tmp/lbar_fifo"
 [ -e "${lbar_fifo}" ] && rm "${lbar_fifo}"

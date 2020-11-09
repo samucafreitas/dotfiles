@@ -52,7 +52,7 @@ net() {
 }
 
 mem() {
-    echo "%{F${white}} ${mem_icon} $(free -h | awk '/Mem:/{print $3}')/$(free -h | awk '/Mem:/{print $2}') %{F-}"
+    echo "%{F${white}} ${mem_icon} $(free -h | awk '/Mem.:/{print $3}')/$(free -h | awk '/Mem.:/{print $2}') %{F-}"
 }
 
 disk() {
@@ -86,5 +86,5 @@ battery() {
 while true; do
     echo "%{l}%{B${magenta}}%{F${black}} ${monitor_icon} %{F-}%{B-}%{+u}%{U${magenta}}$(net)$(mem)$(disk)$(cpu)$(pch)$(battery)%{-u}%{r} $(curUser)"
     sleep 10s
-done | lemonbar -p -b -u 2 -f "FantasqueSansMono-11" -f "FontAwesome-11" -g x20 &
+done | lemonbar -p -b -u 2 -f "FantasqueSansMono-11" -f "FontAwesome-11" -g 1920x20 &
 wait
